@@ -15,13 +15,11 @@
     module.config([ '$routeProvider' , '$locationProvider' ,
         function( $routeProvider , $locationProvider )
         {
-            var prefix = '/static/partials/';
+            var prefix = '/static/partials/';     // local
+            //var prefix = '/tmp/zenbanx/static/partials/';       // live
 
             $routeProvider
                 .when('/', {
-                    redirectTo: '/landing'
-                })
-                .when('/landing', {
                     templateUrl: prefix + 'landing.html',
                     controller: 'LandingController',
                     controllerAs: 'lc'

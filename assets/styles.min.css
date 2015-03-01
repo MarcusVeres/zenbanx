@@ -1,1 +1,64 @@
-body{font-family:sans-serif;background:teal;color:orange}
+/*
+Error: Invalid CSS after "#EEE": expected expression (e.g. 1px, bold), was "\"
+        on line 128 of static/sass/styles.sass
+
+123: 
+124:     width: 100%
+125: 
+126:     tr
+127:         &:nth-child(2n)
+128:             background: #EEE\
+129:         &:hover
+130:             background: $light_gray
+131: 
+132:     td
+133:         padding: 2px
+
+Backtrace:
+static/sass/styles.sass:128
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/scss/parser.rb:1163:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/script/lexer.rb:220:in `expected!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/script/parser.rb:601:in `assert_done'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/script/parser.rb:63:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/script/parser.rb:183:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/script.rb:27:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:1120:in `parse_script'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:710:in `parse_property'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:681:in `parse_property_or_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:647:in `parse_line'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:525:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:544:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:534:in `block in build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:544:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:534:in `block in build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:544:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:534:in `block in build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:527:in `build_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:544:in `block in append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:543:in `append_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:396:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/engine.rb:268:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:404:in `run'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.5/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"#EEE\": expected expression (e.g. 1px, bold), was \"\\"\A         on line 128 of static/sass/styles.sass\A \A 123: \A 124:     width: 100%\A 125: \A 126:     tr\A 127:         &:nth-child(2n)\A 128:             background: #EEE\\A 129:         &:hover\A 130:             background: $light_gray\A 131: \A 132:     td\A 133:         padding: 2px"; }

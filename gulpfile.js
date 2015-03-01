@@ -48,7 +48,7 @@ gulp.task('sass', function() {
 // it has slightly different syntax and implementation, but it works! 
 gulp.task('ruby_sass', function(){
     return sass( paths.sass , { style: 'compressed'})
-        .pipe(rename('sass.min.css'))
+        .pipe(rename('styles.min.css'))
         .pipe(gulp.dest('assets/'));
 });
 
@@ -67,8 +67,8 @@ gulp.task('scripts', function() {
 
 gulp.task('watch', function() {
     gulp.watch( paths.sass , ['ruby_sass']);
-    gulp.watch( paths.js , ['scripts']);
+    // gulp.watch( paths.js , ['scripts']);
 });
 
-gulp.task('default', ['clean', 'ruby_sass', 'scripts', 'watch']);
+gulp.task('default', ['clean', 'ruby_sass', 'watch']);
 
