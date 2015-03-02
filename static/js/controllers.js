@@ -32,6 +32,10 @@
                 $scope.show_menu();
             }
 
+            // close the menu if the user clicks on a link or changes location
+            $scope.$on('$routeChangeSuccess', function () {
+                $scope.hide_menu();
+            });
         }
     ]);
 
