@@ -53,7 +53,52 @@
             })
             */
 
-            console.log($scope);
+            $scope.$on('$viewContentLoaded', function(){
+                //Here your view content is fully loaded !!
+                //alert("all content is loaded");
+
+                // try the wow js
+                new WOW().init();
+            });
+
+            // make phones sticky
+            //
+            var _this = this;
+            _this.which_sticky = 0;
+
+            _this.is_sticky = function( number ){
+                if( _this.which_sticky == number ){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // check to make sticky
+            window.onscroll = function (event) {
+            // called when the window is scrolled.
+            
+                // get scroll position
+                var top = window.pageYOffset || document.documentElement.scrollTop; 
+                //console.log(top);
+
+                if( top > 1460 && top < 2980 ){
+                    _this.which_sticky = 1;
+                }
+                else if ( top > 3925 && top < 4280 ) {
+                    _this.which_sticky = 3;
+                }
+                else {
+                    _this.which_sticky = 0;
+                }
+
+                // make the dom FEEL IT
+                $scope.$apply();
+
+            }
+
+            //console.log($scope);
+
         }
     ]);
 
