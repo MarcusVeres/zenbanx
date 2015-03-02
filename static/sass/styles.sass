@@ -39,28 +39,147 @@ a
         &:hover
             background-color: $dark_orange !important
 
-h1, h2, h3, h4, h5, h6
-    font-weight: 300
+//
 
+h1, h2, h3, h4, h5, h6
+    font-weight: 100
+    text-align: center
+
+h2
+    color: $purple
+    font-size: 2.4rem
+    padding-bottom: 2.8rem
+    padding-top: 2rem
+    font-weight: 300
 
 // sections
 
 section 
-
     width: 100%
     clear: both
     background-size: cover
     background-position: center center
-    
 
+section.divider
+    background: $purple
+    color: $white
+
+    a
+        color: $white
+        &:hover
+
+section.footer
+    background: $gray
+    
+section.faq
+    
+    h3
+        text-align: left
+ 
 // backgrounds
 
 .some-bg
     background-image: url('some_url.png')
 
 
+// images
+
+.video-placeholder,
+.phone-placeholder
+    margin: auto
+    width: 100% 
+    max-width: 640px
+
+.phone-placeholder
+    max-width: 320px
+
 // lists
 
+.features
+    @include unstyled-list()
+    color: $gray
+    text-align: center
+    font-size: 1.8rem
+    
+    li
+        padding-bottom: 0.8rem
+
+@media screen and ( min-width : 500px )
+
+    .features
+        display: inline-block
+        padding: 20px
+        border: 1px solid $gray
+        @include border-radius( 8px )
+
+.flags
+    @include unstyled-list()
+    text-align: center
+    
+    li
+        @include border-radius( 50% )
+        display: inline-block
+
+    img
+        @include border-radius( 50% )
+
+
+.sitemap
+    @include unstyled-list()
+    text-align: center
+    color: #666
+
+    a
+        color: #444
+        text-decoration: none
+        text-transform: uppercase
+
+    .social-icons
+        color: $white
+
+    .call-to-action
+        color: $white
+        text-transform: uppercase
+
+
+// buttons
+ 
+.zen-button
+    @include border-radius( 4px )
+    font-weight: 100
+    border: 1px solid #ed282a 
+    padding: 10px 10px 10px 10px 
+    text-decoration: none 
+    text-transform: uppercase
+    display: inline-block
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3)
+    color: #FFFFFF
+    background-color: #F15C5D 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F15C5D), to(#F69146))
+    background-image: -webkit-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -moz-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -ms-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -o-linear-gradient(top, #F15C5D, #F69146)
+    background-image: linear-gradient(to bottom, #F15C5D, #F69146)
+//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F15C5D, endColorstr=#F69146)
+
+.zen-button:hover
+    border: 1px solid #d51214
+    background-color: #ed2d2e 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ed2d2e), to(#f47415))
+    background-image: -webkit-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -moz-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -ms-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -o-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
+//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
+
+@media screen and (max-width : 500px )
+
+    .zen-button
+        width: 100%
+        @include border-radius( 0 )
+        border: none
 
 // wrappers
 
@@ -86,14 +205,50 @@ section
 
 // components
 
-.fa-graphic
-    @include border-radius(64px)
-    padding: 10px
-
 .large-margins
     padding-top: 4em
     padding-bottom: 4em
 
+h3.feature
+    margin-top: 2rem
+    padding-bottom: 1rem
+    color: $gray
+    font-size: 2rem
+    line-height: 3.1rem
+    text-align: center
+
+.feature-description  
+    font-size: 1.4rem
+    text-align: center
+
+.review
+    color: $off_white
+    font-size: 1.2rem
+    text-align: center
+
+.reviewer
+    font-size: 1rem
+    font-weight: 500
+    text-align: center
+
+.burst
+    border: 1px solid $light_gray
+    @include border-radius( 2rem )
+    padding: 2rem
+    max-width: 180px
+    color: $purple
+    margin: 1.6rem auto
+
+    .small
+        font-size: 1.1rem
+        font-weight: 300
+
+    .large
+        font-size: 2.8rem
+
+.credit-card
+    margin: auto
+    @include border-radius( 24px )
 
 // hide the last separator in an array list
 
@@ -125,7 +280,7 @@ table
 
     tr
         &:nth-child(2n)
-            background: #EEE\
+            background: #EEE
         &:hover
             background: $light_gray
 
