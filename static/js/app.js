@@ -16,7 +16,6 @@
         function( $routeProvider , $locationProvider )
         {
             var prefix = '/static/partials/';     // local
-            //var prefix = '/tmp/zenbanx/static/partials/';       // live
 
             $routeProvider
                 .when('/', {
