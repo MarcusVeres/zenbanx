@@ -70,6 +70,7 @@ p.copy
         float: right
         padding: 1rem
         font-size: 2rem
+        cursor: pointer
 
         &:hover
             background: $dark_purple
@@ -147,14 +148,28 @@ section.faq
 
 // images
 
-.video-placeholder,
-.phone-placeholder
+.phone-wrapper
+    display: block
+    margin: 1rem auto
+    position: relative
+
+    .phone-background
+        position: absolute
+        top: 0
+        left: 0
+
+    .animation
+        position: absolute
+        top: 20
+        left: 20
+
+.video-placeholder
+    display: block
     margin: auto
     width: 100% 
     max-width: 640px
+    position: relative
 
-.phone-placeholder
-    max-width: 320px
 
 // lists
 
@@ -167,13 +182,26 @@ section.faq
     li
         padding-bottom: 0.8rem
 
-@media screen and ( min-width : 500px )
+@media screen and ( min-width : 682px )
 
     .features
-        display: inline-block
-        padding: 20px
-        border: 1px solid $gray
-        @include border-radius( 8px )
+        display: table
+
+        li
+            display: inline-block
+            padding: 4px
+            height: 120px
+            position: relative
+            margin-top: 0
+            margin-bottom: 0
+
+        .guts
+            display: table-cell
+            padding: 20px
+            border: 1px solid $gray
+            @include border-radius( 8px )
+            // this is hacky
+            width: 400px
 
 .flags
     @include unstyled-list()
@@ -256,6 +284,15 @@ section.faq
     background-image: -o-linear-gradient(top, #ed2d2e, #f47415)
     background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
 //    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
+
+@media screen and ( min-width : 768px )
+    
+    .zen-button
+        float: right
+        margin-right: 2rem
+        margin-bottom: -20px
+        @include border-radius( 25px )
+
 
 @media screen and (max-width : 500px )
 
