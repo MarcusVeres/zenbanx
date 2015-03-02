@@ -58,9 +58,15 @@ p.copy
 
 // nav
 
+.menu-icon
+    color: white
+    font-size: 2rem
+
+
 .main-menu-header
     height: auto
     background: $purple
+    border-bottom: 4px solid $dark_purple
     position: fixed
     top: 0
     width: 100%
@@ -73,15 +79,11 @@ p.copy
     .open-menu
         float: right
         padding: 1rem
-        font-size: 2rem
         cursor: pointer
 
         &:hover
             background: $dark_purple
             
-    
-    .open-menu-icon
-        color: white
 
 .main-menu-overlay
     position: fixed
@@ -132,9 +134,17 @@ section.padded
     padding-top: 2rem
     padding-bottom: 2rem
 
-//section.banner
-    min-height: 400px
-    background-image: url('/assets/img/banner-main.png')
+section.pitch
+
+    .row
+        padding: 2rem 0
+
+
+@media screen and ( min-width: 768px )
+    
+    .row
+        padding: 4rem 0
+
 
 section.divider
     background: $purple
@@ -153,7 +163,7 @@ section.faq
     
     h3
         text-align: left
- 
+
 // backgrounds
 
 .some-bg
@@ -199,7 +209,7 @@ section.faq
     li
         padding-bottom: 0.8rem
 
-@media screen and ( min-width : 682px )
+@media screen and ( min-width : 768px )
 
     .features
         display: table
@@ -215,7 +225,7 @@ section.faq
         .guts
             display: table-cell
             padding: 20px
-            border: 1px solid $gray
+            border: 1px solid $light_gray
             @include border-radius( 8px )
             // this is hacky
             width: 400px
@@ -268,9 +278,11 @@ section.faq
 .team
     @include unstyled-list()
     text-align: center
+    margin-top: 3rem
 
     li
         margin: 2rem 1rem
+        display: inline-block
 
     .name
         color: $purple
@@ -379,11 +391,13 @@ section.faq
     padding-top: 4em
     padding-bottom: 4em
 
-
 h3.call-to-action
     color: white
     text-transform: uppercase
     padding: 1.8rem
+
+
+// selling features
 
 h3.feature
     margin-top: 2rem
@@ -396,6 +410,17 @@ h3.feature
 .feature-description  
     font-size: 1.4rem
     text-align: center
+
+@media screen and ( min-width: 768px )
+
+    h3.feature
+        font-size: 3.2rem
+        line-height: 4.2rem
+        text-align: left
+
+    .feature-description  
+        font-size: 1.8rem
+        text-align: left
 
 
 .review

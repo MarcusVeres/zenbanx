@@ -4,8 +4,8 @@
     <a href="/">
         <img class="logo" src="/assets/img/logo.png" />
     </a>
-    <div class="open-menu" ng-click="show_menu()">
-        <i class="fa fa-bars open-menu-icon"></i>
+    <div class="menu-icon open-menu" ng-click="show_menu()">
+        <i class="fa fa-bars"></i>
     </div>
     <div class="clearfix"></div>
 
@@ -15,7 +15,9 @@
 <section class="main-menu-overlay" ng-show="menu_visible">
 <div class="content-wrapper">
 
-    <div class="close-menu" ng-click="hide_menu()">X</div>
+    <div class="menu-icon close-menu" ng-click="hide_menu()">
+        <i class="fa fa-close"></i>
+    </div>
 
     <ul class="main-menu">
         <li><a href="/">Home</a></li>
