@@ -48,8 +48,7 @@
 
             // wowjs animations
             new WOW().init();
-            $scope.apply();
-
+            //$scope.apply();
 
             console.log("loading landing controller");
 
