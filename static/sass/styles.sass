@@ -39,11 +39,8 @@ a
         &:hover
             background-color: $dark_orange !important
 
-//
-
 h1, h2, h3, h4, h5, h6
     font-weight: 100
-    text-align: center
 
 h2
     color: $purple
@@ -51,6 +48,12 @@ h2
     padding-bottom: 2.8rem
     padding-top: 2rem
     font-weight: 300
+
+p.copy
+    font-size: 1.8rem
+    
+.centered
+    text-align: center
 
 // sections
 
@@ -140,6 +143,26 @@ section.faq
     .call-to-action
         color: $white
         text-transform: uppercase
+
+
+.team
+    @include unstyled-list()
+    text-align: center
+
+    li
+        margin: 2rem 1rem
+
+    .name
+        color: $purple
+        font-size: 1.6rem
+
+    .title
+        color: $gray
+        font-size: 1.7rem 
+
+    img
+        width: 180px
+        margin-bottom: 1rem
 
 
 // buttons
