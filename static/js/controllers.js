@@ -35,6 +35,7 @@
             // close the menu if the user clicks on a link or changes location
             $scope.$on('$routeChangeSuccess', function () {
                 $scope.hide_menu();
+                window.scrollTo(0,0);
             });
         }
     ]);
