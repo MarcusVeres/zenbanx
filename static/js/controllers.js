@@ -9,9 +9,29 @@
 
     // main navigation (in header)
     appControllers.controller( 'MainNavigationController' , [
-        function()
+                 '$scope',
+        function( $scope )
         {
             console.log("loading main navigation controller");
+
+            $scope.menu_visible = false;
+
+            $scope.hide_menu = function() {
+                $scope.menu_visible = false;
+            }
+
+            $scope.show_menu = function() {
+                $scope.menu_visible = true;
+            }
+
+            $scope.toggle_menu = function() {
+                if( $scope.menu_visible ) {
+                    $scope.hide_menu();
+                    return;
+                } 
+                $scope.show_menu();
+            }
+
         }
     ]);
 
