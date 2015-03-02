@@ -23,6 +23,31 @@
                     controller: 'LandingController',
                     controllerAs: 'lc'
                 })
+                .when('/about', {
+                    templateUrl: prefix + 'about.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
+                .when('/faq', {
+                    templateUrl: prefix + 'faq.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
+                .when('/get-zenbanx', {
+                    templateUrl: prefix + 'get-zenbanx.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
+                .when('/news', {
+                    templateUrl: prefix + 'news.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
+                .when('/terms', {
+                    templateUrl: prefix + 'terms.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
                 .when('/test', {
                     templateUrl: prefix + 'test.html',
                     controller: 'TestController',
