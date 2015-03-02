@@ -158,6 +158,7 @@ section.footer
     background: #a09fa0
     margin-top: 10rem
     padding-top: 2rem
+    border-top: 1px solid #888
     
 section.faq
     
@@ -264,6 +265,14 @@ section.faq
     @include unstyled-list()
     text-align: center
     color: #666
+    padding: 2rem
+
+    li
+        display: inline-block
+        padding: 0.6rem 0.4rem
+
+        &:first-child
+            border-left: none
 
     a
         font-size: 1.2rem
@@ -274,6 +283,16 @@ section.faq
 
         &:hover
             text-decoration: underline
+
+@media screen and ( max-width : 500px )
+
+    .sitemap
+
+        li
+            display: block
+            border: none
+            padding: 0.6rem 0 0 0
+
 
 .team
     @include unstyled-list()
@@ -504,20 +523,6 @@ table
 
 
 // footer stuff
-
-.sitemap
-
-    @include unstyled-list() 
-    text-align: center
-    padding: 2rem
-
-    li
-        display: inline-block
-        border-left: 1px solid $gray
-        padding: 0 1em
-
-        &:first-child
-            border-left: none
 
 .copyright
     text-align: center
