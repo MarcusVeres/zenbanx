@@ -128,6 +128,10 @@ section
     background-size: cover
     background-position: center center
 
+section.padded
+    padding-top: 2rem
+    padding-bottom: 2rem
+
 //section.banner
     min-height: 400px
     background-image: url('/assets/img/banner-main.png')
@@ -142,6 +146,7 @@ section.divider
 
 section.footer
     background: $gray
+    margin-top: 10rem
     
 section.faq
     
@@ -225,7 +230,6 @@ section.faq
     img
         @include border-radius( 50% )
 
-
 .sitemap
     @include unstyled-list()
     text-align: center
@@ -242,7 +246,6 @@ section.faq
     .call-to-action
         color: $white
         text-transform: uppercase
-
 
 .team
     @include unstyled-list()
@@ -263,6 +266,24 @@ section.faq
         width: 180px
         margin-bottom: 1rem
 
+.posts
+    @include unstyled-list()
+    color: $gray
+    font-size: 2.1rem
+
+    li
+        margin-bottom: 6rem
+
+    .source
+        font-weight: 500
+
+    .date
+        color: $dark_purple
+        font-size: 1rem
+
+    .media
+        font-weight: 500
+        font-size: 1.4rem
 
 // buttons
  
@@ -340,6 +361,7 @@ section.faq
     padding-top: 4em
     padding-bottom: 4em
 
+
 h3.feature
     margin-top: 2rem
     padding-bottom: 1rem
@@ -352,6 +374,7 @@ h3.feature
     font-size: 1.4rem
     text-align: center
 
+
 .review
     color: $off_white
     font-size: 1.2rem
@@ -361,6 +384,7 @@ h3.feature
     font-size: 1rem
     font-weight: 500
     text-align: center
+
 
 .burst
     border: 1px solid $light_gray
@@ -377,9 +401,21 @@ h3.feature
     .large
         font-size: 2.8rem
 
+
 .credit-card
     margin: auto
     @include border-radius( 24px )
+
+
+.editor
+    margin-bottom: 4rem
+    font-size: 1.5rem
+    color: $gray
+
+    a
+        font-weight: 500
+        color: $gray
+        
 
 // hide the last separator in an array list
 
