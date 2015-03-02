@@ -45,6 +45,12 @@
                  '$scope','$http',/*'CountryList',*/
         function( $scope , $http /*, CountryList*/ )
         {
+
+            // wowjs animations
+            new WOW().init();
+            $scope.apply();
+
+
             console.log("loading landing controller");
 
             /*
