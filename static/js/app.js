@@ -28,6 +28,11 @@
                     controller: 'TestController',
                     controllerAs: 'tc'
                 })
+                .when('/contact', {
+                    templateUrl: prefix + 'contact.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
                 .when('/faq', {
                     templateUrl: prefix + 'faq.html',
                     controller: 'FaqController',
