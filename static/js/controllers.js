@@ -2,10 +2,12 @@
 
     "use strict";
 
+
     // module used for controllers
     var appControllers = angular.module('appControllers' , [
         'results'   // the graph builder stuff
     ]);
+
 
     // main navigation (in header)
     appControllers.controller( 'MainNavigationController' , [
@@ -39,6 +41,7 @@
             });
         }
     ]);
+
 
     // landing page
     appControllers.controller( 'LandingController' , [
@@ -108,11 +111,40 @@
         }
     ]);
 
+
     //
     appControllers.controller( 'TestController' , [
         function()
         {
             console.log("loading test controller");
+        }
+    ]);
+
+
+    // faq controller 
+    appControllers.controller( 'FaqController' , [
+                 '$scope','$http',
+        function( $scope , $http )
+        {
+            console.log("loading faq controller");
+
+            // this is going to pull all frequently asked questions
+            $http({
+                method: 'GET',
+                url: '/assets/data/faqs.json'
+            })
+            .success( function( data )
+            {
+                console.log("the faq data that we got is:", data);
+
+                // assign the data to a scope variable that we can use in the dom
+                $scope.faq_questions = data;
+            })
+            .error( function( error )
+            {
+                console.log("something went wrong:", error);
+            });
+
         }
     ]);
 

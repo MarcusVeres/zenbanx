@@ -10,7 +10,7 @@
     <div class="filterbox row">
         <div class="col-xs-12">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="How do I Join?">
+                <input type="text" class="form-control" placeholder="How do I Join?" ng-model="faq_filter">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button">Go!</button>
                 </span>
@@ -23,23 +23,27 @@
 
 
 <section>
-    
     <ul class="table-of-contents">
         <li><a href="#">The Fundamentals</a></li>
         <li><a href="#">Security &amp; Privacy</a></li>
         <li><a href="#">Using ZenBanx</a></li>
         <li><a href="#">Everything Else</a></li>
     </ul>
-
-</div>
 </section>
 
 
 <section id="faq-fundamentals" class="legal padded">
 <div class="content-wrapper">
 
-    <h3>THE FUNDAMENTALS</h3>
+    <div ng-repeat="category in faq_questions">
+        <h3>{{ category.category_name }}</h3>
+        <div class="faq-question" ng-repeat="faq in category.questions | filter: faq_filter" >
+            <h4>{{ faq.question }}</h4>
+            <p>{{ faq.answer }}</p>
+        </div>
+    </div>
 
+    <!--
     <h4>What is ZenBanx?</h4>
     <p>ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone.</p>
 
@@ -56,6 +60,8 @@
 
     <h4>What is ZenBanx?</h4>
     <p>ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone.</p>
+    -->
+
 
 </div>
 </section>

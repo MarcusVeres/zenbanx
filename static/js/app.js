@@ -30,8 +30,8 @@
                 })
                 .when('/faq', {
                     templateUrl: prefix + 'faq.html',
-                    controller: 'TestController',
-                    controllerAs: 'tc'
+                    controller: 'FaqController',
+                    controllerAs: 'fc'
                 })
                 .when('/get-zenbanx', {
                     templateUrl: prefix + 'get-zenbanx.html',
