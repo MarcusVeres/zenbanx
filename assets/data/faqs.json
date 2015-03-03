@@ -3,20 +3,20 @@
         "category_name" : "The Fundamentals",
         "questions" : [
             {
-                "question" : "How do I tie my shoes?",
-                "answer" : "You bend over and tie them."
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             },
             {
-                "question" : "How do I open an account?",
-                "answer" : "You go to de bank and ask dem"
+                "question" : "Why is my Social Insurance Number (SIN) required to open a  ZenBanx Account?",
+                "answer" : "Simplicity, security, and saving money are a few good reasons to join ZenBanx.</p><ul><li>Simple: You have instant access to the currencies of your life.</li><li>Secure: We take security very seriously (in fact, we have a special FAQ dedicated to Security, see below)</li><li>Save Money: You can send money internationally for as low as $0.95.</li></ul>"
             },
             {
-                "question" : "Spaghetti fall out of pockets, what do?",
-                "answer" : "You bend over and tie them."
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             },
             {
-                "question" : "How do I triforce?",
-                "answer" : "You can't."
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             }
         ]
     },
@@ -24,20 +24,62 @@
         "category_name" : "Security &amp; Privacy",
         "questions" : [
             {
-                "question" : "How do I tie my shoes?",
-                "answer" : "<ul><li>Bend over</li><li>Tie them</li></ul>"
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             },
             {
-                "question" : "How do I open an account?",
-                "answer" : "You go to de bank and ask dem"
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             },
             {
-                "question" : "Spaghetti fall out of pockets, what do?",
-                "answer" : "You bend over and tie them."
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             },
             {
-                "question" : "How do I triforce?",
-                "answer" : "You can't."
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            }
+        ]
+    },
+    {
+        "category_name" : "Using ZenBanx",
+        "questions" : [
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            }
+        ]
+    },
+    {
+        "category_name" : "Everything Else",
+        "questions" : [
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
+            },
+            {
+                "question" : "What is ZenBanx?",
+                "answer" : "ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone."
             }
         ]
     }
