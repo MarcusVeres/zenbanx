@@ -21,11 +21,11 @@
         ]
     },
     {
-        "category_name" : "Security and Privacy",
+        "category_name" : "Security &amp; Privacy",
         "questions" : [
             {
                 "question" : "How do I tie my shoes?",
-                "answer" : "You bend over and tie them."
+                "answer" : "<ul><li>Bend over</li><li>Tie them</li></ul>"
             },
             {
                 "question" : "How do I open an account?",

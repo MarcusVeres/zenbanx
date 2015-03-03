@@ -36,10 +36,10 @@
 <div class="content-wrapper">
 
     <div ng-repeat="category in faq_questions">
-        <h3>{{ category.category_name }}</h3>
+        <h3 ng-bind-html="category.category_name"></h3>
         <div class="faq-question" ng-repeat="faq in category.questions | filter: faq_filter" >
             <h4>{{ faq.question }}</h4>
-            <p>{{ faq.answer }}</p>
+            <div ng-bind-html="faq.answer"></div>
         </div>
     </div>
 
