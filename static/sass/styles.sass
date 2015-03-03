@@ -146,9 +146,11 @@ section.pitch
         padding: 2rem 0
 
 @media screen and ( min-width: 768px )
-    
-    .row
-        padding: 4rem 0
+
+    section.pitch
+
+        .row
+            padding: 4rem 0
 
 
 section.divider
@@ -168,7 +170,15 @@ section.footer
 
 
 section.legal
-    
+   
+    h3
+        text-transform: uppercase
+        font-size: 1.8rem
+        color: $gray
+        margin-top: 4rem
+        border-top: 1px solid $light_gray
+        padding-top: 0.8rem 
+
     h4
         color: $dark_purple
         font-weight: 500
@@ -182,6 +192,28 @@ section.legal
     h3
         text-align: left
 
+
+section.lightbox
+    text-align: center
+
+    .content-wrapper
+        max-width: 640px
+
+    h3
+        text-transform: uppercase
+        font-size: 1.8rem
+        color: $gray
+        margin-top: 3rem
+        margin-bottom: 3.4rem
+        
+    p
+        padding: 0.6rem
+        margin: 0
+        color: $gray
+        font-size: 1.3rem
+
+    .input-group
+        margin: 0.6rem
 
 // backgrounds
 
@@ -345,7 +377,7 @@ section.legal
         width: 180px
         margin-bottom: 1rem
 
-// news reports
+
 .posts
     @include unstyled-list()
     color: $gray
@@ -390,8 +422,14 @@ section.legal
         color: $gray
 
 
-@media screen and (max-width: 500px)
+.app-store-icons
+    @include unstyled-list()
+    text-align: center
 
+    li
+        margin-top: 1.8rem
+        display: inline-block
+        margin: 0 1.4rem
 
 
 // buttons
@@ -620,6 +658,14 @@ table
 @media screen and (max-width: 480px)
 
     .hide-from-mobile
+        display: none
+
+
+// only show mobile
+
+@media screen and (min-width: 500px)
+
+    .hide-from-desktop
         display: none
 
 
