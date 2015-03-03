@@ -22,7 +22,7 @@
 </section>
 
 
-<section>
+<section class="hide-from-desktop">
     <ul class="table-of-contents">
         <li><a href="#">The Fundamentals</a></li>
         <li><a href="#">Security &amp; Privacy</a></li>
@@ -37,23 +37,22 @@
 
     <div ng-repeat="category in faq_questions">
         <h3 ng-bind-html="category.category_name"></h3>
-        <div class="faq-question" ng-repeat="faq in category.questions | filter: faq_filter" >
-            <h4>{{ faq.question }}</h4>
-            <div ng-bind-html="faq.answer"></div>
+
+        <div class="row question-wrapper">
+            <div class="faq-question col-xs-12 col-sm-4 col-md-3" ng-repeat="faq in category.questions | filter: faq_filter" >
+                <h4>{{ faq.question }}</h4>
+                <div ng-bind-html="faq.answer"></div>
+            </div>
         </div>
+
     </div>
 
     <!--
     <h4>What is ZenBanx?</h4>
-    <p>ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone.</p>
+    <p></p>
 
     <h4>Why is my Social Insurance Number (SIN) required to open a  ZenBanx Account?</h4>
-    <p>Simplicity, security, and saving money are a few good reasons to join ZenBanx.</p>
-    <ul>
-        <li>Simple: You have instant access to the currencies of your life.</li>
-        <li>Secure: We take security very seriously (in fact, we have a special FAQ dedicated to Security, see below)</li>
-        <li>Save Money: You can send money internationally for as low as $0.95.</li>
-    </ul>
+    Simplicity, security, and saving money are a few good reasons to join ZenBanx.</p><ul><li>Simple: You have instant access to the currencies of your life.</li><li>Secure: We take security very seriously (in fact, we have a special FAQ dedicated to Security, see below)</li><li>Save Money: You can send money internationally for as low as $0.95.</li></ul>
 
     <h4>What is ZenBanx?</h4>
     <p>ZenBanx is a multi-currency bank account for Citizens of the World. The ZenBanx Account allows you to hold up to five currencies! You can save, exchange, or send them domestically or internationally all from your smartphone.</p>
