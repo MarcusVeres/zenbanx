@@ -63,6 +63,109 @@ p.fineprint
     text-align: center
 
 
+// wrappers
+
+.page-wrapper
+
+    background-color: $white
+    width: 100%
+    max-width: $max_width
+    margin: auto
+    padding: 0
+
+.content-wrapper,
+.negative-wrapper
+    
+    max-width: $max_width
+    margin: auto
+    padding: 1em
+
+    &.squashed
+        padding-top: 0
+        padding-bottom: 0
+
+
+// layout components
+
+.cell-parent
+    display: table
+
+.cell-child
+    display: table-cell
+    vertical-align: middle
+
+
+// components
+
+.contact-form
+    margin: 3rem 0 
+    text-align: left
+
+    button[type="submit"]
+        margin-bottom: 1rem
+
+.filterbox
+    margin-top: 4rem
+    margin-bottom: 1rem
+
+.large-margins
+    padding-top: 4em
+    padding-bottom: 4em
+
+h3.call-to-action
+    color: white
+    text-transform: uppercase
+    padding: 1.8rem
+
+
+// buttons
+ 
+.zen-button
+    @include border-radius( 50px )
+    font-weight: 100
+    font-size: 1.7rem
+    border: 1px solid #ed282a 
+    padding: 25px 
+    text-decoration: none 
+    text-transform: uppercase
+    display: inline-block
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3)
+    color: #FFFFFF
+    background-color: #F15C5D 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F15C5D), to(#F69146))
+    background-image: -webkit-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -moz-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -ms-linear-gradient(top, #F15C5D, #F69146)
+    background-image: -o-linear-gradient(top, #F15C5D, #F69146)
+    background-image: linear-gradient(to bottom, #F15C5D, #F69146)
+//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F15C5D, endColorstr=#F69146)
+
+.zen-button:hover
+    border: 1px solid #d51214
+    background-color: #ed2d2e 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ed2d2e), to(#f47415))
+    background-image: -webkit-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -moz-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -ms-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: -o-linear-gradient(top, #ed2d2e, #f47415)
+    background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
+//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
+
+@media screen and ( min-width : 768px )
+    
+    .zen-button
+        float: right
+        margin-right: 2rem
+        margin-bottom: -20px
+
+@media screen and (max-width : 768px )
+
+    .zen-button
+        width: 100%
+        @include border-radius( 0 )
+        border: none
+
+
 // nav
 
 .menu-icon
@@ -128,6 +231,7 @@ p.fineprint
 
         &:hover
             background: $dark_purple
+
 
 // sections
 
@@ -229,11 +333,6 @@ section.lightbox
     .input-group
         margin: 0.6rem
 
-// backgrounds
-
-.some-bg
-    background-image: url('some_url.png')
-
 
 // images
 
@@ -276,7 +375,7 @@ section.lightbox
     @include unstyled-list()
     color: $gray
     text-align: center
-    font-size: 1.8rem
+    font-size: 1.4rem
     
     li
         padding-bottom: 0.8rem
@@ -284,26 +383,25 @@ section.lightbox
     &.extra
         padding-top: 6rem
 
+
 @media screen and ( min-width : 768px )
 
     .features
-        display: table
 
         li
             display: inline-block
             padding: 4px
-            height: 120px
             position: relative
             margin-top: 0
             margin-bottom: 0
 
-        .guts
-            display: table-cell
+        .content
             padding: 20px
-            border: 1px solid $light_gray
+            border: 1px solid #e9e9e9
             @include border-radius( 8px )
-            // this is hacky
-            width: 400px
+            display: table-cell
+            vertical-align: middle
+            height: 150px
 
 .flags
     @include unstyled-list()
@@ -443,99 +541,6 @@ section.lightbox
     li
         display: inline-block
         margin: 1.8rem 1.4rem 0 1.8rem
-
-
-// buttons
- 
-.zen-button
-    @include border-radius( 50px )
-    font-weight: 100
-    font-size: 1.7rem
-    border: 1px solid #ed282a 
-    padding: 25px 
-    text-decoration: none 
-    text-transform: uppercase
-    display: inline-block
-    text-shadow: -1px -1px 0 rgba(0,0,0,0.3)
-    color: #FFFFFF
-    background-color: #F15C5D 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#F15C5D), to(#F69146))
-    background-image: -webkit-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -moz-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -ms-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -o-linear-gradient(top, #F15C5D, #F69146)
-    background-image: linear-gradient(to bottom, #F15C5D, #F69146)
-//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F15C5D, endColorstr=#F69146)
-
-.zen-button:hover
-    border: 1px solid #d51214
-    background-color: #ed2d2e 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ed2d2e), to(#f47415))
-    background-image: -webkit-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -moz-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -ms-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -o-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
-//    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
-
-@media screen and ( min-width : 768px )
-    
-    .zen-button
-        float: right
-        margin-right: 2rem
-        margin-bottom: -20px
-
-
-@media screen and (max-width : 768px )
-
-    .zen-button
-        width: 100%
-        @include border-radius( 0 )
-        border: none
-
-// wrappers
-
-.page-wrapper
-
-    background-color: $white
-    width: 100%
-    max-width: $max_width
-    margin: auto
-    padding: 0
-
-.content-wrapper,
-.negative-wrapper
-    
-    max-width: $max_width
-    margin: auto
-    padding: 1em
-
-    &.squashed
-        padding-top: 0
-        padding-bottom: 0
-
-
-// components
-
-.contact-form
-    margin: 3rem 0 
-    text-align: left
-
-    button[type="submit"]
-        margin-bottom: 1rem
-
-.filterbox
-    margin-top: 4rem
-    margin-bottom: 1rem
-
-.large-margins
-    padding-top: 4em
-    padding-bottom: 4em
-
-h3.call-to-action
-    color: white
-    text-transform: uppercase
-    padding: 1.8rem
 
 
 // selling features
