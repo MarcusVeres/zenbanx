@@ -89,6 +89,7 @@
 
                 if( top > 1460 && top < 2980 ){
                     _this.which_sticky = 1;
+                    document.getElementById("first-phone").style.marginTop = (top - 1460) + "px";
                 }
                 else if ( top > 3925 && top < 4280 ) {
                     _this.which_sticky = 3;

@@ -198,10 +198,18 @@ section.faq
         left: 23px
 
 @media screen and (min-width : 768px )
+    
+    // to get the parallax effect working, this needs to be absolute
+    // otherwise the margin will push down all rows below it
+    .phone-wrapper
+        position: absolute
 
     .phone-wrapper.sticky
-        position: fixed
-        top: 100px
+        //position: fixed
+        //top: 100px
+        margin-top: 1px
+
+
 
 
 .video-placeholder
