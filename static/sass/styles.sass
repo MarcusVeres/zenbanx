@@ -130,18 +130,20 @@ section
     background-size: cover
     background-position: center center
 
+
 section.padded
     padding-top: 2rem
     padding-bottom: 2rem
 
+
 section.propped-up
     min-height: 320px
+
 
 section.pitch
 
     .row
         padding: 2rem 0
-
 
 @media screen and ( min-width: 768px )
     
@@ -157,25 +159,29 @@ section.divider
         color: $white
         &:hover
 
+
 section.footer
     background: #a09fa0
     margin-top: 10rem
     padding-top: 2rem
     border-top: 1px solid #888
-    
-section.faq
+
+
+section.legal
     
     h4
         color: $dark_purple
         font-weight: 500
-        font-size: 1.8rem
+        font-size: 1.5rem
         padding-bottom: 0.7rem
+        margin-top: 3rem
 
     p
         font-size: 1.4rem
 
     h3
         text-align: left
+
 
 // backgrounds
 
@@ -203,14 +209,12 @@ section.faq
     // otherwise the margin will push down all rows below it
     .phone-wrapper
         position: absolute
+        margin-left: 100px
 
     .phone-wrapper.sticky
         //position: fixed
         //top: 100px
         margin-top: 1px
-
-
-
 
 .video-placeholder
     display: block
@@ -341,6 +345,7 @@ section.faq
         width: 180px
         margin-bottom: 1rem
 
+// news reports
 .posts
     @include unstyled-list()
     color: $gray
@@ -360,13 +365,43 @@ section.faq
         font-weight: 500
         font-size: 1.4rem
 
+
+.table-of-contents
+    @include unstyled-list()
+    margin: 3rem 0
+
+    li
+        border-top: 1px solid $light_gray
+        padding: 1rem
+
+        &:last-child
+            border-bottom: 1px solid $light_gray
+
+        &:hover
+            background: $purple
+
+            a
+                color: $white
+
+    a
+        text-decoration: none
+        text-transform: uppercase
+        font-weight: 500
+        color: $gray
+
+
+@media screen and (max-width: 500px)
+
+
+
 // buttons
  
 .zen-button
-    @include border-radius( 4px )
+    @include border-radius( 50px )
     font-weight: 100
+    font-size: 1.7rem
     border: 1px solid #ed282a 
-    padding: 10px 10px 10px 10px 
+    padding: 25px 
     text-decoration: none 
     text-transform: uppercase
     display: inline-block
@@ -398,7 +433,6 @@ section.faq
         float: right
         margin-right: 2rem
         margin-bottom: -20px
-        @include border-radius( 25px )
 
 
 @media screen and (max-width : 768px )
@@ -431,6 +465,10 @@ section.faq
 
 
 // components
+
+.filterbox
+    margin-top: 4rem
+    margin-bottom: 1rem
 
 .large-margins
     padding-top: 4em
