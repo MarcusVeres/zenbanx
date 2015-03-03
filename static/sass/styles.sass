@@ -121,6 +121,7 @@ h3.call-to-action
 // buttons
  
 .zen-button
+    z-index: 100
     @include border-radius( 50px )
     font-weight: 100
     font-size: 1.7rem
@@ -141,7 +142,6 @@ h3.call-to-action
 //    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F15C5D, endColorstr=#F69146)
 
 .zen-button:hover
-    border: 1px solid #d51214
     background-color: #ed2d2e 
     background-image: -webkit-gradient(linear, left top, left bottom, from(#ed2d2e), to(#f47415))
     background-image: -webkit-linear-gradient(top, #ed2d2e, #f47415)
@@ -154,9 +154,20 @@ h3.call-to-action
 @media screen and ( min-width : 768px )
     
     .zen-button
-        float: right
-        margin-right: 2rem
-        margin-bottom: -20px
+        position: fixed
+        right: 0
+        margin-left: 100px
+        margin-right: 40px
+        top: 392px
+
+@media screen and ( min-width : 980px )
+
+    .zen-button
+        position: fixed
+        left: 50%
+        margin-left: 300px
+        margin-right: 0
+        top: 392px
 
 @media screen and (max-width : 768px )
 
@@ -164,6 +175,11 @@ h3.call-to-action
         width: 100%
         @include border-radius( 0 )
         border: none
+        position: fixed
+        bottom: 0
+        padding-top: 16px
+        padding-bottom: 16px
+        border-top: 2px solid #d51214
 
 
 // nav
@@ -239,7 +255,9 @@ section
     width: 100%
     clear: both
     background-size: cover
+    background-repeat: no-repeat
     background-position: center center
+    background-color: #FFF
 
 
 section.padded
@@ -250,6 +268,11 @@ section.padded
 section.propped-up
     min-height: 320px
 
+
+section.banner.main
+    height: 360px
+    overflow: hidden
+    background-image: url('/assets/img/banner-main.png')
 
 section.pitch
 
