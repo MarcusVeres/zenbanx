@@ -48,22 +48,13 @@
                  '$scope','$http',/*'CountryList',*/
         function( $scope , $http /*, CountryList*/ )
         {
+            console.log("loading landing controller");
 
             // wowjs animations
             new WOW().init();
-            //$scope.apply();
-
-            console.log("loading landing controller");
-
-            /*
-            CountryList.success( function( data ){
-                $scope.country_list = data;
-            })
-            */
 
             $scope.$on('$viewContentLoaded', function(){
                 //Here your view content is fully loaded !!
-                //alert("all content is loaded");
 
                 // try the wow js
                 new WOW().init();
@@ -90,12 +81,18 @@
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
 
-                if( top > 1460 && top < 2980 ){
+                var first_start = 1350;
+                var first_stop = 3150;
+                var third_start = 4325;
+                var third_stop = 4780;
+
+                if( top > first_start && top < first_stop ){
                     _this.which_sticky = 1;
-                    document.getElementById("first-phone").style.marginTop = (top - 1460) + "px";
+                    document.getElementById("first-phone").style.marginTop = (top - first_start) + "px";
                 }
-                else if ( top > 3925 && top < 4280 ) {
+                else if ( top > third_start && top < third_stop ) {
                     _this.which_sticky = 3;
+                    document.getElementById("third-phone").style.marginTop = (top - third_start) + "px";
                 }
                 else {
                     _this.which_sticky = 0;
