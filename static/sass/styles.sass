@@ -196,6 +196,28 @@ h3.call-to-action
 
 // nav
 
+.menu-group
+    @include unstyled-list()
+    
+    li
+        float: left
+
+
+.menu-button
+    
+    a
+        color: white
+        text-transform: uppercase
+        font-weight: 500
+        padding: 1rem
+        cursor: pointer
+        display: block
+        line-height: 3rem
+
+        &:hover
+            background: $dark_purple
+
+
 .menu-icon
     color: white
     font-size: 2rem
