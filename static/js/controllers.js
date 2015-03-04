@@ -96,7 +96,7 @@
                 //console.log(top);
 
 
-                var first_start = 1350;
+                var first_start = 1570;
                 var first_stop = 3280;
 
                 var second_start = 3460;
