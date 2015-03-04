@@ -50,62 +50,12 @@
                 $scope.show_menu();
             }
 
+
             // close the menu if the user clicks on a link or changes location
             $scope.$on('$routeChangeSuccess', function () {
                 $scope.hide_menu();
                 window.scrollTo(0,0);
             });
-
-        }
-    ]);
-
-
-    // landing page
-    appControllers.controller( 'LandingController' , [
-                 '$scope','$http',/*'CountryList',*/
-        function( $scope , $http /*, CountryList*/ )
-        {
-            console.log("loading landing controller");
-
-            // wowjs animations
-            new WOW().init();
-
-            $scope.$on('$viewContentLoaded', function(){
-                //Here your view content is fully loaded !!
-
-                // try the wow js
-                new WOW().init();
-            });
-
-
-            var _this = this;
-
-            // compress the scrollbar
-            $scope.compress_ribbon = false;
-
-
-            // make phones position fixed
-            _this.which_sticky = 0;
-
-            _this.is_sticky = function( number ){
-                if( _this.which_sticky == number ){
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-
-            // determines which animation should be visible
-            _this.which_animation = 0;
-
-            _this.is_animation = function( number ){
-                if( _this.which_animation == number ){
-                    return true;
-                } else {
-                    return false;
-                }
-            }
 
 
             // check to make sticky
@@ -145,16 +95,16 @@
 
                 // animation shifts
                 if( top > first_start && top < first_stop ){
-                    _this.which_animation = 1;
+                    $scope.which_animation = 1;
                 }
                 else if ( top > second_start && top < second_stop ) {
-                    _this.which_animation = 2;
+                    $scope.which_animation = 2;
                 }
                 else if ( top > third_start && top < third_stop ) {
-                    _this.which_animation = 3;
+                    $scope.which_animation = 3;
                 }
                 else {
-                    _this.which_animation = 0;
+                    $scope.which_animation = 0;
                 }
 
 
@@ -162,21 +112,74 @@
 
                 /*
                 if( top > first_start && top < first_stop ){
-                    _this.which_sticky = 1;
+                    $scope.which_sticky = 1;
                     document.getElementById("first-phone").style.marginTop = (top - first_start) + "px";
                 }
                 else if ( top > third_start && top < third_stop ) {
-                    _this.which_sticky = 3;
+                    $scope.which_sticky = 3;
                     document.getElementById("third-phone").style.marginTop = (top - third_start) + "px";
                 }
                 else {
-                    _this.which_sticky = 0;
+                    $scope.which_sticky = 0;
                 }
                 */
 
                 // make the dom FEEL IT
                 $scope.$apply();
 
+            }
+
+            // 
+
+        }
+    ]);
+
+
+    // landing page
+    appControllers.controller( 'LandingController' , [
+                 '$scope','$http',/*'CountryList',*/
+        function( $scope , $http /*, CountryList*/ )
+        {
+            console.log("loading landing controller");
+
+            // wowjs animations
+            new WOW().init();
+
+            $scope.$on('$viewContentLoaded', function(){
+                //Here your view content is fully loaded !!
+
+                // try the wow js
+                new WOW().init();
+            });
+
+
+            var _this = this;
+
+            // compress the scrollbar
+            $scope.compress_ribbon = false;
+
+
+            // make phones position fixed
+            $scope.which_sticky = 0;
+
+            $scope.is_sticky = function( number ){
+                if( $scope.which_sticky == number ){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+
+            // determines which animation should be visible
+            $scope.which_animation = 0;
+
+            $scope.is_animation = function( number ){
+                if( $scope.which_animation == number ){
+                    return true;
+                } else {
+                    return false;
+                }
             }
 
             //console.log($scope);
