@@ -60,9 +60,10 @@
                 new WOW().init();
             });
 
-            // make phones sticky
-            //
+
             var _this = this;
+
+            // make phones position fixed
             _this.which_sticky = 0;
 
             _this.is_sticky = function( number ){
@@ -73,6 +74,19 @@
                 }
             }
 
+
+            // determines which animation should be visible
+            _this.which_animation = 1;
+
+            _this.is_animation = function( number ){
+                if( _this.which_animation == number ){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+
             // check to make sticky
             window.onscroll = function (event) {
             // called when the window is scrolled.
@@ -81,11 +95,42 @@
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
 
+
                 var first_start = 1350;
                 var first_stop = 3150;
+
+                var second_start = 3160;
+                var second_stop = 4215;
+
                 var third_start = 4325;
                 var third_stop = 4780;
 
+
+                // new method: animation toggling
+
+                // for phone sticky
+                if( top > first_start && top < third_stop ){
+                    document.getElementById("mega-phone").style.marginTop = (top - first_start) + "px";
+                }
+
+                // animation shifts
+                if( top > first_start && top < first_stop ){
+                    _this.which_animation = 1;
+                }
+                else if ( top > second_start && top < second_stop ) {
+                    _this.which_animation = 2;
+                }
+                else if ( top > third_start && top < third_stop ) {
+                    _this.which_animation = 3;
+                }
+                else {
+                    _this.which_animation = 0;
+                }
+
+
+                // old method: three phones
+
+                /*
                 if( top > first_start && top < first_stop ){
                     _this.which_sticky = 1;
                     document.getElementById("first-phone").style.marginTop = (top - first_start) + "px";
@@ -97,6 +142,7 @@
                 else {
                     _this.which_sticky = 0;
                 }
+                */
 
                 // make the dom FEEL IT
                 $scope.$apply();
@@ -104,7 +150,6 @@
             }
 
             //console.log($scope);
-
         }
     ]);
 
