@@ -16,6 +16,22 @@
         {
             console.log("loading main navigation controller");
 
+            // for compressing header
+
+            $scope.is_ribbon_compressed = function(){
+                return $scope.ribbon_compressed;
+            };
+
+            $scope.compress_the_ribbon = function() {
+                $scope.ribbon_compressed = true;
+            };
+
+            $scope.expand_the_ribbon = function() {
+                $scope.ribbon_compressed = false;
+            }
+
+            // 
+
             $scope.menu_visible = false;
 
             $scope.hide_menu = function() {
@@ -39,6 +55,7 @@
                 $scope.hide_menu();
                 window.scrollTo(0,0);
             });
+
         }
     ]);
 
@@ -62,6 +79,10 @@
 
 
             var _this = this;
+
+            // compress the scrollbar
+            $scope.compress_ribbon = false;
+
 
             // make phones position fixed
             _this.which_sticky = 0;
@@ -95,6 +116,14 @@
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
 
+                // for ribbon
+                if( top < 100 ){
+                    $scope.expand_the_ribbon();
+                } else {
+                    $scope.compress_the_ribbon();
+                }
+
+                // hide the dropdown on scroll down
                 $scope.hide_menu();
 
                 var first_start = 1525;

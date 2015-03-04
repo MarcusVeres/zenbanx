@@ -1,4 +1,4 @@
-<section class="ribbon-section">
+<section class="ribbon-section" ng-class="{solid: is_ribbon_compressed()}" >
     <!-- note:  eventually the ribbon will reside inside "ribbon wrapper", 
                 but we need to figure out how the sides will be rectangular over a certain width -->
     <div class="ribbon">
@@ -9,7 +9,7 @@
 </section>
 
 
-<section class="main-menu-header">
+<section class="main-menu-header" ng-class="{solid: is_ribbon_compressed()}" >
 <div class="ribbon-wrapper">
 
     <div class="menu-wrapper">
