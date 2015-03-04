@@ -100,6 +100,7 @@ p.fineprint
 
 .cell-parent
     display: table
+    background: tan
 
 .cell-child
     display: table-cell
@@ -285,6 +286,11 @@ section.banner.main
     overflow: hidden
     background-image: url('/assets/img/banner-main.png')
 
+section.sub-main
+    
+    .content-wrapper
+        max-width: 1140px
+
 section.pitch
 
     .row
@@ -307,6 +313,7 @@ section.divider
     a
         color: $white
         &:hover
+            text-decoration: underline
 
 
 section.footer
@@ -414,12 +421,31 @@ section.lightbox
     color: $gray
     text-align: center
     font-size: 1.4rem
+    margin-bottom: 8rem
     
     li
         padding-bottom: 0.8rem
 
     &.extra
         padding-top: 6rem
+
+    img
+        width: 100%
+
+    .image
+        display: table-cell
+        vertical-align: middle
+        height: 120px
+
+    .image-wrapper
+        display: inline-block
+
+    .proposition
+        padding: 0 24px
+
+    .caption
+        padding-top: 0.8rem
+        border-top: 1px solid $light_gray
 
 @media screen and ( min-width : 768px )
 
@@ -432,23 +458,9 @@ section.lightbox
             margin-top: 0
             margin-bottom: 0
 
-        .content
-            padding: 12px
-            border: 1px solid #e9e9e9
-            @include border-radius( 8px )
-            display: table-cell
-            vertical-align: middle
-            height: 80px
-            width: 400px
-
 @media screen and ( min-width : 992px )
 
-    .features
-
-        .content
-            padding: 20px
-            height: 150px
-
+    // something
 
 .flags
     @include unstyled-list()
