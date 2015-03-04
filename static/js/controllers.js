@@ -76,7 +76,7 @@
 
 
             // determines which animation should be visible
-            _this.which_animation = 1;
+            _this.which_animation = 0;
 
             _this.is_animation = function( number ){
                 if( _this.which_animation == number ){
@@ -97,12 +97,12 @@
 
 
                 var first_start = 1350;
-                var first_stop = 3150;
+                var first_stop = 3140;
 
-                var second_start = 3160;
-                var second_stop = 4215;
+                var second_start = 3460;
+                var second_stop = 4040;
 
-                var third_start = 4325;
+                var third_start = 4335;
                 var third_stop = 4780;
 
 
