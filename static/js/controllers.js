@@ -95,6 +95,7 @@
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
 
+                $scope.hide_menu();
 
                 var first_start = 1525;
                 var first_stop = 3280;
