@@ -24,7 +24,6 @@ html, body
     margin: 0
 
 body
-    padding-top: 80px
     font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif
     font-weight: 300
     color: $text_color
@@ -204,8 +203,36 @@ h3.call-to-action
 
 // nav
 
+.ribbon
+    margin: 0
+    position: fixed
+    width: 100%
+    z-index: 90
+
+    & svg
+        fill: $dark_purple
+        //stroke: $dark_purple
+        //stroke-width: 0.2
+        height: 140px
+        width: 100%
+
+
+.ribbon-wrapper
+    max-width: 1366px 
+    padding: 0
+    margin: auto
+    position: relative
+
+
+.menu-wrapper
+    position: absolute
+    top: 44px
+    width: 100%
+
+
 .menu-group
     @include unstyled-list()
+    margin-right: 1.5rem
     
     li
         float: left
@@ -233,8 +260,7 @@ h3.call-to-action
 
 .main-menu-header
     height: auto
-    background: $purple
-    border-bottom: 4px solid $dark_purple
+    background: none
     position: fixed
     top: 0
     width: 100%
@@ -243,6 +269,7 @@ h3.call-to-action
     .logo
         float: left
         max-width: 220px
+        margin-left: 1.5rem
 
     .open-menu
         float: right
@@ -251,8 +278,22 @@ h3.call-to-action
 
         &:hover
             background: $dark_purple
-            
 
+@media screen and (max-width: 500px )
+
+    .main-menu-header
+        background: $purple
+        border-bottom: 4px solid $dark_purple
+        height: 80px
+
+    .ribbon svg
+        height: 80px
+        fill: $purple
+
+    .menu-wrapper
+        top: 12px
+    
+            
 .main-menu-overlay
     position: fixed
     top: 0
@@ -337,7 +378,7 @@ section.propped-up
 
 
 section.banner.main
-    height: 360px
+    height: 440px
     overflow: hidden
     background-image: url('/assets/img/banner-main.png')
 

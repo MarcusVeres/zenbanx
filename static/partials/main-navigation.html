@@ -1,26 +1,37 @@
-<section class="main-menu-header">
-<div class="content-wrapper">
-
-    <a href="/">
-        <img class="logo" src="/assets/img/logo.png" />
-    </a>
-
-    <div class="pull-right">
-        <ul class="menu-group">
-            <li>
-                <div class="menu-button">
-                    <a href="/sign-in">Sign In</a>
-                </div>
-            </li>
-            <li>
-                <div class="menu-icon open-menu" ng-click="toggle_menu()">
-                    <i class="fa fa-bars"></i>
-                </div>
-            </li>
-        </ul>
+<section class="ribbon-section">
+    <!-- note:  eventually the ribbon will reside inside "ribbon wrapper", 
+                but we need to figure out how the sides will be rectangular over a certain width -->
+    <div class="ribbon">
+        <svg viewBox="0 0 100 10" preserveAspectRatio="none" style="background:none" fill="none">
+            <polygon points="0,0 32,5 100,1.1 100,9.7 74,5.6 32,6.4 0,10" style="margin-top: 20px;"></polygon>
+        </svg>
     </div>
+</section>
 
-    <div class="clearfix"></div>
+
+<section class="main-menu-header">
+<div class="ribbon-wrapper">
+
+    <div class="menu-wrapper">
+        <a href="/">
+            <img class="logo" src="/assets/img/logo.png" />
+        </a>
+        <div class="pull-right">
+            <ul class="menu-group">
+                <li>
+                    <div class="menu-button">
+                        <a href="/sign-in">Sign In</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="menu-icon open-menu" ng-click="toggle_menu()">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 
 </div>
 </section>
