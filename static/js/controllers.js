@@ -97,12 +97,12 @@
 
 
                 var first_start = 1350;
-                var first_stop = 3140;
+                var first_stop = 3280;
 
                 var second_start = 3460;
-                var second_stop = 4040;
+                var second_stop = 3840;
 
-                var third_start = 4335;
+                var third_start = 4135;
                 var third_stop = 4780;
 
 
