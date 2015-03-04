@@ -13,7 +13,7 @@
                 </div>
             </li>
             <li>
-                <div class="menu-icon open-menu" ng-click="show_menu()">
+                <div class="menu-icon open-menu" ng-click="toggle_menu()">
                     <i class="fa fa-bars"></i>
                 </div>
             </li>
@@ -25,6 +25,8 @@
 </div>
 </section>
 
+
+<!--
 <section class="main-menu-overlay" ng-show="menu_visible">
 <div class="content-wrapper">
 
@@ -33,12 +35,25 @@
     </div>
 
     <ul class="main-menu">
-        <li><a href="/">Home</a></li>
         <li><a href="/about">Who We Are</a></li>
-        <li><a href="/faq">Frequently Asked Questions</a></li>
-        <li><a href="/news">News &amp; Reviews</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/news">News</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li><a href="/get-zenbanx">Get ZenBanx</a></li>
+    </ul>
+
+</div>
+</section>
+-->
+
+
+<section class="main-menu-underlay" ng-show="menu_visible">
+<div class="content-wrapper">
+
+    <ul class="main-menu">
+        <li><a href="/about">Who We Are</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/contact">Contact</a></li>
     </ul>
 
 </div>

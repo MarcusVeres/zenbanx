@@ -140,7 +140,7 @@ h3.call-to-action
 // buttons
  
 .zen-button
-    z-index: 100
+    z-index: 99
     @include border-radius( 50px )
     font-weight: 100
     font-size: 1.7rem
@@ -262,32 +262,57 @@ h3.call-to-action
     background: $purple
     z-index: 100
 
+
+.main-menu-underlay
+    @include grayscale-shadow( 12 , 0.4 )
+    position: fixed
+    top: 80px
+    left: 50%
+    width: 160px
+    margin-left: 300px
+    color: $white
+    background: $dark_purple
+    z-index: 97
+
     .main-menu
-        clear: both
-        @include unstyled-list()
+        text-align: right
+
+@media screen and (max-width: 1140px)
+
+    .main-menu-underlay
+        right: 20px
+        left: auto
+        margin-left: 0
+
+
+.main-menu
+    clear: both
+    @include unstyled-list()
+    color: white
+    text-transform: uppercase
+    font-size: 1.8rem
+    text-align: center
+
+    li
+        line-height: 4rem
+
+    a
         color: white
-        text-transform: uppercase
-        font-size: 1.8rem
-        text-align: center
-
-        li
-            line-height: 3rem
-
-        a
-            color: white
-            text-decoration: none
-            font-weight: 300
-
-            &:hover
-                font-weight: 500
-
-    .close-menu
-        float: right    
-        padding: 1.6rem 2rem
-        cursor: pointer
+        text-decoration: none
+        font-weight: 300
+        padding: 1rem
 
         &:hover
-            background: $dark_purple
+            font-weight: 500
+
+
+.close-menu
+    float: right    
+    padding: 1.6rem 2rem
+    cursor: pointer
+
+    &:hover
+        background: $dark_purple
 
 
 // sections
