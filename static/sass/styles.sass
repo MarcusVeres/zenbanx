@@ -207,7 +207,7 @@ h3.call-to-action
     margin: 0
     position: fixed
     width: 100%
-    z-index: 90
+    z-index: 93
 
     & svg
         fill: $dark_purple
@@ -307,6 +307,7 @@ h3.call-to-action
 
 .main-menu-underlay
     @include grayscale-shadow( 12 , 0.4 )
+    padding-top: 40px
     position: fixed
     top: 80px
     left: 50%
@@ -314,7 +315,8 @@ h3.call-to-action
     margin-left: 300px
     color: $white
     background: $dark_purple
-    z-index: 97
+    background: $darker_purple
+    z-index: 90
 
     .main-menu
         text-align: right
@@ -322,6 +324,7 @@ h3.call-to-action
 @media screen and (max-width: 1140px)
 
     .main-menu-underlay
+        padding-top: 4px
         right: 20px
         left: auto
         margin-left: 0
