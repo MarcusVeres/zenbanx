@@ -476,6 +476,18 @@ section.lightbox
         margin: 0.6rem
 
 
+section.toc
+    // table of contents
+    background: #F9F9F9
+
+@media screen and (max-width: 768px)
+
+    section.toc
+        .content-wrapper
+            padding-left: 0
+            padding-right: 0
+
+
 // images
 
 .phone-wrapper
@@ -690,6 +702,16 @@ section.lightbox
         text-transform: uppercase
         font-weight: 500
         color: $gray
+
+@media screen and (min-width: 768px)
+
+    .table-of-contents    
+
+        li
+            display: inline-block
+            
+            &:last-child
+                border-bottom: none
 
 
 .app-store-icons
