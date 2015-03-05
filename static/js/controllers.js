@@ -16,6 +16,7 @@
         {
             console.log("loading main navigation controller");
 
+
             // for compressing header
 
             $scope.is_ribbon_compressed = function(){
@@ -30,13 +31,15 @@
                 $scope.ribbon_compressed = false;
             }
 
-            // 
+
+            // determines which phone animation will be on top of the others ( visible )
 
             $scope.set_animation = function( number ) {
                 $scope.which_animation = number;
             }
 
-            // 
+
+            // determines visibility of the overlay/underlay dropdown menu
 
             $scope.menu_visible = false;
 
@@ -57,6 +60,7 @@
             }
 
             // close the menu if the user clicks on a link or changes location
+            
             $scope.$on('$routeChangeSuccess', function () {
                 $scope.hide_menu();
                 window.scrollTo(0,0);
@@ -74,13 +78,13 @@
             var third_start = 4135;
             var third_stop = 7050;
 
-            // check to make sticky
+
+            // track window position to manage display of dom elements
+
             window.onscroll = function (event) {
-            // called when the window is scrolled.
 
                 // get scroll position
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
-                //console.log(top);
 
                 // for ribbon
                 if( top < 100 ){
@@ -114,29 +118,10 @@
                     $scope.which_animation = 0;
                 }
 
-
-                // old method: three phones
-
-                /*
-                if( top > first_start && top < first_stop ){
-                    $scope.which_sticky = 1;
-                    document.getElementById("first-phone").style.marginTop = (top - first_start) + "px";
-                }
-                else if ( top > third_start && top < third_stop ) {
-                    $scope.which_sticky = 3;
-                    document.getElementById("third-phone").style.marginTop = (top - third_start) + "px";
-                }
-                else {
-                    $scope.which_sticky = 0;
-                }
-                */
-
                 // make the dom FEEL IT
                 $scope.$apply();
 
             }
-
-            // 
 
         }
     ]);
