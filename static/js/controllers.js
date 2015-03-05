@@ -170,6 +170,30 @@
                     $scope.which_animation = 0;
                 }
 
+                
+                // interstitials
+                var fade = document.getElementById("interstitial"); 
+                if( screen_top < t1.y - buffer )
+                {
+                    var opacity = (t1.y - screen_top) / 100;
+                    console.log("O:", opacity);
+                    fade.style.opacity = opacity;
+                }
+                /*
+                else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
+                {
+                    console.log("second");
+                    $scope.set_animation(2);
+                }
+                else if ( screen_top > t3.y - buffer )
+                {
+                    console.log("third");
+                    $scope.set_animation(3);
+                }
+                else {
+                    $scope.which_animation = 0;
+                }
+                 */
                 // make the dom FEEL IT
                 $scope.$apply();
 
