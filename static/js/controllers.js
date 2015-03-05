@@ -9,12 +9,58 @@
     ]);
 
 
+    // create a position service to share coordinates between controllers
+    // i am not super happy with this code, but it works and i am in a rush
+
+    appControllers.service('coordinates', function () {
+
+        var _this = this;
+
+        // these are the transitions
+        // a transition point is a dom element that is parallel to the scrolling phone
+        // at the time of an animation switch
+        _this.t1 = 'unset'; 
+        _this.t2 = 'unset';
+        _this.t3 = 'unset';
+
+        // start and end points of animation / scrolling
+        _this.start = 'unset';
+        _this.end = 'unset'; 
+
+        _this.init_phone_pos = 'unset';     // y coordinate of phone before any animations are applied
+        _this.margin_from_top = 200         // distance from top of browser that phone "snaps" to 
+
+        // getter and setter methods
+
+        return {
+            get: function ( var_name ) {
+                return _this[var_name];
+            },
+            set: function( var_name , value ) {
+                console.log("setting" , var_name , "to" , value);
+                _this[var_name] = value;
+            },
+            get_init_phone_pos: function() {
+                return _this.init_phone_pos;
+            },
+            get_margin: function() {
+                return _this.margin_from_top;
+            }
+        };
+
+    });
+
+
     // main navigation (in header)
     appControllers.controller( 'MainNavigationController' , [
-                 '$scope',
-        function( $scope )
+                 '$scope','coordinates',
+        function( $scope , coordinates )
         {
             console.log("loading main navigation controller");
+
+            console.log("prop:" , coordinates.get('t1') );
+            console.log("prop:" , coordinates.get('t2') );
+            console.log("prop:" , coordinates.get('t3') );
 
 
             // for compressing header
@@ -67,27 +113,15 @@
             });
 
 
-            // get starting coordinates of stop-points
-
-            var first_start = 1525;
-            var first_stop = 3280;
-
-            var second_start = 3460;
-            var second_stop = 3840;
-
-            var third_start = 4135;
-            var third_stop = 7050;
-
-
             // track window position to manage display of dom elements
 
             window.onscroll = function (event) {
 
                 // get scroll position
-                var top = window.pageYOffset || document.documentElement.scrollTop; 
+                var screen_top = window.pageYOffset || document.documentElement.scrollTop; 
 
                 // for ribbon
-                if( top < 100 ){
+                if( screen_top < 100 ){
                     $scope.expand_the_ribbon();
                 } else {
                     $scope.compress_the_ribbon();
@@ -96,21 +130,35 @@
                 // hide the dropdown on scroll down
                 $scope.hide_menu();
 
+
                 // for phone sticky
-                if( top > first_start && top < third_stop ){
-                    document.getElementById("mega-phone").style.marginTop = (top - first_start) + "px";
+                // TODO: if( not landing page, don't apply this code
+
+                var t1 = coordinates.get('t1');
+                var t2 = coordinates.get('t2');
+                var t3 = coordinates.get('t3');
+                var end = coordinates.get('end');
+
+                var top_limit = t1.y + coordinates.get_margin();
+                var bottom_limit = end.y;
+
+                if( screen_top > top_limit && screen_top < bottom_limit ){
+                    document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
                 }
 
                 // animation shifts
-                if( top > first_start && top < first_stop ){
+                if( screen_top < t1.y )
+                {
                     console.log("first");
                     $scope.set_animation(1);
                 }
-                else if ( top > second_start && top < second_stop ) {
+                else if ((screen_top > t2.y - 400) && (screen_top < t3 - 400))
+                {
                     console.log("second");
                     $scope.set_animation(2);
                 }
-                else if ( top > third_start && top < third_stop ) {
+                else if ( screen_top > (t3.y + t3.height))
+                {
                     console.log("third");
                     $scope.set_animation(3);
                 }
@@ -129,8 +177,8 @@
 
     // landing page
     appControllers.controller( 'LandingController' , [
-                 '$scope','$http',/*'CountryList',*/
-        function( $scope , $http /*, CountryList*/ )
+                 '$scope','$http','coordinates',
+        function( $scope , $http , coordinates )
         {
             console.log("loading landing controller");
 
@@ -144,10 +192,34 @@
                 // try the wow js
                 new WOW().init();
 
-                // get the y offset of the transition points (used by the animation) once dom is loaded
-                $scope.transition_1 = document.getElementById('transition-1').getBoundingClientRect().top;
-                $scope.transition_2 = document.getElementById('transition-2').getBoundingClientRect().top;
-                $scope.transition_3 = document.getElementById('transition-3').getBoundingClientRect().top;
+                // update the transitions 
+                // refer to the 'coordinates' service for more information
+                
+                var t1 = document.getElementById('transition-1');
+                var t2 = document.getElementById('transition-2');
+                var t3 = document.getElementById('transition-3');
+                var end = document.getElementById('transition-end');
+
+                // set the coordinates 
+                coordinates.set('t1', {
+                    'y': t1.getBoundingClientRect().top,
+                    'height': t1.offsetHeight
+                });
+                coordinates.set('t2', {
+                    'y': t2.getBoundingClientRect().top,
+                    'height': t2.offsetHeight
+                });
+                coordinates.set('t3', {
+                    'y': t3.getBoundingClientRect().top,
+                    'height': t3.offsetHeight
+                });
+                coordinates.set('end', {
+                    'y': end.getBoundingClientRect().top,
+                    'height': end.offsetHeight
+                });
+
+                // get the original position of the mega phone
+                coordinates.set( "init_phone_pos" , document.getElementById('mega-phone').getBoundingClientRect().top );
 
             });
 
