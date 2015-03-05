@@ -32,9 +32,6 @@ body
 a
     color: $purple
 
-    &:hover
-        color: $dark_orange
-
     &.inverse
         background-color: $orange
         color: $white   
@@ -654,12 +651,15 @@ section.toc
 
         &:hover
             background: $purple
+
+            a
+                color: $white
     
 
 .sitemap
     @include unstyled-list()
     text-align: center
-    color: #666
+    color: #717171
     padding: 2rem
 
     li
@@ -898,7 +898,7 @@ table
 
 .copyright
     text-align: center
-    color: $gray
+    color: #717171
     font-size: 0.9rem
 
 
