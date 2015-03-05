@@ -9,57 +9,12 @@
     ]);
 
 
-    // create a position service to share coordinates between controllers
-    // i am not super happy with this code, but it works and i am in a rush
-
-    appControllers.service('coordinates', function () {
-
-        var _this = this;
-
-        // these are the transitions
-        // a transition point is a dom element that is parallel to the scrolling phone
-        // at the time of an animation switch
-        _this.t1 = 'unset'; 
-        _this.t2 = 'unset';
-        _this.t3 = 'unset';
-
-        // start and end points of animation / scrolling
-        _this.start = 'unset';
-        _this.end = 'unset'; 
-
-        _this.init_phone_pos = 'unset';     // y coordinate of phone before any animations are applied
-        _this.margin_from_top = 160;        // distance from top of browser that phone "snaps" to 
-        _this.buffer = 200;                 // distance from transition point that the animation switches
-
-        // getter and setter methods
-
-        return {
-            get: function ( var_name ) {
-                return _this[var_name];
-            },
-            set: function( var_name , value ) {
-                console.log("setting" , var_name , "to" , value);
-                _this[var_name] = value;
-            },
-            get_init_phone_pos: function() {
-                return _this.init_phone_pos;
-            },
-        };
-
-    });
-
-
     // main navigation (in header)
     appControllers.controller( 'MainNavigationController' , [
-                 '$scope','coordinates',
-        function( $scope , coordinates )
+                 '$scope',
+        function( $scope )
         {
             console.log("loading main navigation controller");
-
-            console.log("prop:" , coordinates.get('t1') );
-            console.log("prop:" , coordinates.get('t2') );
-            console.log("prop:" , coordinates.get('t3') );
-
 
             // for compressing header
 
@@ -75,15 +30,13 @@
                 $scope.ribbon_compressed = false;
             }
 
-
-            // determines which phone animation will be on top of the others ( visible )
+            // 
 
             $scope.set_animation = function( number ) {
                 $scope.which_animation = number;
             }
 
-
-            // determines visibility of the overlay/underlay dropdown menu
+            // 
 
             $scope.menu_visible = false;
 
@@ -104,22 +57,33 @@
             }
 
             // close the menu if the user clicks on a link or changes location
-            
             $scope.$on('$routeChangeSuccess', function () {
                 $scope.hide_menu();
                 window.scrollTo(0,0);
             });
 
 
-            // track window position to manage display of dom elements
+            // get starting coordinates of stop-points
 
+            var first_start = 1525;
+            var first_stop = 3280;
+
+            var second_start = 3460;
+            var second_stop = 3840;
+
+            var third_start = 4135;
+            var third_stop = 7050;
+
+            // check to make sticky
             window.onscroll = function (event) {
+            // called when the window is scrolled.
 
                 // get scroll position
-                var screen_top = window.pageYOffset || document.documentElement.scrollTop; 
+                var top = window.pageYOffset || document.documentElement.scrollTop; 
+                //console.log(top);
 
                 // for ribbon
-                if( screen_top < 100 ){
+                if( top < 100 ){
                     $scope.expand_the_ribbon();
                 } else {
                     $scope.compress_the_ribbon();
@@ -128,41 +92,21 @@
                 // hide the dropdown on scroll down
                 $scope.hide_menu();
 
-
                 // for phone sticky
-                // TODO: if( not landing page, don't apply this code
-
-                var margin = coordinates.get('margin_from_top');
-
-                var buffer = coordinates.get('buffer');
-                var t1 = coordinates.get('t1');
-                var t2 = coordinates.get('t2');
-                var t3 = coordinates.get('t3');
-                var end = coordinates.get('end');
-
-                var top_limit = t1.y;
-                var bottom_limit = end.y;
-
-                // compensate for header n' shit
-                screen_top += coordinates.get('margin_from_top');
-
-                if( screen_top > top_limit && screen_top < bottom_limit ){
-                    document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
+                if( top > first_start && top < third_stop ){
+                    document.getElementById("mega-phone").style.marginTop = (top - first_start) + "px";
                 }
 
                 // animation shifts
-                if( screen_top < t2.y - buffer )
-                {
+                if( top > first_start && top < first_stop ){
                     console.log("first");
                     $scope.set_animation(1);
                 }
-                else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
-                {
+                else if ( top > second_start && top < second_stop ) {
                     console.log("second");
                     $scope.set_animation(2);
                 }
-                else if ( screen_top > t3.y - buffer )
-                {
+                else if ( top > third_start && top < third_stop ) {
                     console.log("third");
                     $scope.set_animation(3);
                 }
@@ -170,10 +114,29 @@
                     $scope.which_animation = 0;
                 }
 
+
+                // old method: three phones
+
+                /*
+                if( top > first_start && top < first_stop ){
+                    $scope.which_sticky = 1;
+                    document.getElementById("first-phone").style.marginTop = (top - first_start) + "px";
+                }
+                else if ( top > third_start && top < third_stop ) {
+                    $scope.which_sticky = 3;
+                    document.getElementById("third-phone").style.marginTop = (top - third_start) + "px";
+                }
+                else {
+                    $scope.which_sticky = 0;
+                }
+                */
+
                 // make the dom FEEL IT
                 $scope.$apply();
 
             }
+
+            // 
 
         }
     ]);
@@ -181,8 +144,8 @@
 
     // landing page
     appControllers.controller( 'LandingController' , [
-                 '$scope','$http','coordinates',
-        function( $scope , $http , coordinates )
+                 '$scope','$http',/*'CountryList',*/
+        function( $scope , $http /*, CountryList*/ )
         {
             console.log("loading landing controller");
 
@@ -196,34 +159,10 @@
                 // try the wow js
                 new WOW().init();
 
-                // update the transitions 
-                // refer to the 'coordinates' service for more information
-                
-                var t1 = document.getElementById('transition-1');
-                var t2 = document.getElementById('transition-2');
-                var t3 = document.getElementById('transition-3');
-                var end = document.getElementById('transition-end');
-
-                // set the coordinates 
-                coordinates.set('t1', {
-                    'y': t1.getBoundingClientRect().top,
-                    'height': t1.offsetHeight
-                });
-                coordinates.set('t2', {
-                    'y': t2.getBoundingClientRect().top,
-                    'height': t2.offsetHeight
-                });
-                coordinates.set('t3', {
-                    'y': t3.getBoundingClientRect().top,
-                    'height': t3.offsetHeight
-                });
-                coordinates.set('end', {
-                    'y': end.getBoundingClientRect().top,
-                    'height': end.offsetHeight
-                });
-
-                // get the original position of the mega phone
-                coordinates.set( "init_phone_pos" , document.getElementById('mega-phone').getBoundingClientRect().top );
+                // get the y offset of the transition points (used by the animation) once dom is loaded
+                $scope.transition_1 = document.getElementById('transition-1').getBoundingClientRect().top;
+                $scope.transition_2 = document.getElementById('transition-2').getBoundingClientRect().top;
+                $scope.transition_3 = document.getElementById('transition-3').getBoundingClientRect().top;
 
             });
 
