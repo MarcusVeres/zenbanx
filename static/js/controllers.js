@@ -50,7 +50,6 @@
                 $scope.show_menu();
             }
 
-
             // close the menu if the user clicks on a link or changes location
             $scope.$on('$routeChangeSuccess', function () {
                 $scope.hide_menu();
@@ -58,10 +57,25 @@
             });
 
 
+            // get starting coordinates of stop-points
+
+            var first_start = 1525;
+            var first_stop = 3280;
+
+            var second_start = 3460;
+            var second_stop = 3840;
+
+            var third_start = 4135;
+            var third_stop = 7050;
+
             // check to make sticky
             window.onscroll = function (event) {
             // called when the window is scrolled.
-            
+
+                var el = document.getElementById('proposition-7');
+                var prop = el.getBoundingClientRect().top;
+                console.log("el is:", prop, "from the top.");
+
                 // get scroll position
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
@@ -76,14 +90,6 @@
                 // hide the dropdown on scroll down
                 $scope.hide_menu();
 
-                var first_start = 1525;
-                var first_stop = 3280;
-
-                var second_start = 3460;
-                var second_stop = 3840;
-
-                var third_start = 4135;
-                var third_stop = 7050;
 
 
                 // new method: animation toggling
@@ -145,11 +151,18 @@
             // wowjs animations
             new WOW().init();
 
+
+            //Here your view content is fully loaded !!
             $scope.$on('$viewContentLoaded', function(){
-                //Here your view content is fully loaded !!
 
                 // try the wow js
                 new WOW().init();
+
+                // get the y offset of the transition points (used by the animation) once dom is loaded
+                $scope.transition_1 = document.getElementById('transition-1').getBoundingClientRect().top;
+                $scope.transition_2 = document.getElementById('transition-2').getBoundingClientRect().top;
+                $scope.transition_3 = document.getElementById('transition-3').getBoundingClientRect().top;
+
             });
 
 
