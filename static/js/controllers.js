@@ -173,27 +173,40 @@
                 
                 // interstitials
                 var fade = document.getElementById("interstitial"); 
-                if( screen_top < t1.y - buffer )
+                if( screen_top < t1.y + 200 )
                 {
                     var opacity = (t1.y - screen_top) / 100;
                     console.log("O:", opacity);
                     fade.style.opacity = opacity;
                 }
-                /*
-                else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
+                else if(( screen_top > t2.y - 800 ) && (screen_top < t2.y - 400 ))
                 {
-                    console.log("second");
-                    $scope.set_animation(2);
+                    var opacity = (screen_top - t2.y + 800) / 100;
+                    console.log("O:", opacity);
+                    fade.style.opacity = opacity; 
                 }
-                else if ( screen_top > t3.y - buffer )
+                else if(( screen_top > t2.y - 400 ) && (screen_top < t2.y))
                 {
-                    console.log("third");
-                    $scope.set_animation(3);
+                    var opacity = (t2.y - screen_top - 200) / 100;
+                    console.log("O:", opacity);
+                    fade.style.opacity = opacity; 
                 }
+                else if(( screen_top > t3.y - 800 ) && (screen_top < t3.y - 400 ))
+                {
+                    var opacity = (screen_top - t3.y + 800) / 100;
+                    console.log("O:", opacity);
+                    fade.style.opacity = opacity; 
+                }
+                else if(( screen_top > t3.y - 400 ) && (screen_top < t3.y))
+                {
+                    var opacity = (t3.y - screen_top - 200) / 100;
+                    console.log("O:", opacity);
+                    fade.style.opacity = opacity; 
+                } 
                 else {
-                    $scope.which_animation = 0;
+                    fade.style.opacity = 0; 
                 }
-                 */
+                
                 // make the dom FEEL IT
                 $scope.$apply();
 
