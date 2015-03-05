@@ -45,8 +45,8 @@
                 })
                 .when('/news', {
                     templateUrl: prefix + 'news.html',
-                    controller: 'TestController',
-                    controllerAs: 'tc'
+                    controller: 'NewsController',
+                    controllerAs: 'nc'
                 })
                 .when('/privacy', {
                     templateUrl: prefix + 'privacy.html',

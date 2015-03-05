@@ -238,5 +238,33 @@
     ]);
 
 
+    // news controller 
+    appControllers.controller( 'NewsController' , [
+                 '$scope','$http',
+        function( $scope , $http )
+        {
+            console.log("loading news controller");
+
+            // this is going to pull all frequently asked questions
+            $http({
+                method: 'GET',
+                url: '/assets/data/news.json'
+            })
+            .success( function( data )
+            {
+                console.log("the faq data that we got is:", data);
+
+                // assign the data to a scope variable that we can use in the dom
+                $scope.posts = data;
+            })
+            .error( function( error )
+            {
+                console.log("something went wrong:", error);
+            });
+
+        }
+    ]);
+
+
 })(angular);
 
