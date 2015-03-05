@@ -43,9 +43,6 @@
             get_init_phone_pos: function() {
                 return _this.init_phone_pos;
             },
-            get_margin: function() {
-                return _this.margin_from_top;
-            }
         };
 
     });
@@ -138,8 +135,9 @@
                 var t2 = coordinates.get('t2');
                 var t3 = coordinates.get('t3');
                 var end = coordinates.get('end');
+                var margin = coordinates.get('margin_from_top');
 
-                var top_limit = t1.y + coordinates.get_margin();
+                var top_limit = t1.y;
                 var bottom_limit = end.y;
 
                 if( screen_top > top_limit && screen_top < bottom_limit ){
@@ -147,17 +145,17 @@
                 }
 
                 // animation shifts
-                if( screen_top < t1.y )
+                if( screen_top < t2.y )
                 {
                     console.log("first");
                     $scope.set_animation(1);
                 }
-                else if ((screen_top > t2.y - 400) && (screen_top < t3 - 400))
+                else if (screen_top > t2.y && screen_top < t3.y)
                 {
                     console.log("second");
                     $scope.set_animation(2);
                 }
-                else if ( screen_top > (t3.y + t3.height))
+                else if ( screen_top > t3.y)
                 {
                     console.log("third");
                     $scope.set_animation(3);
