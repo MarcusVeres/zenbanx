@@ -129,7 +129,12 @@
                     $scope.expand_the_ribbon();
                 } else {
                     $scope.compress_the_ribbon();
+                    console.log("what's goin on here?");
                 }
+
+                // update the dom to affect the header
+                // TODO : update only the header .. i think scope.apply is overkill
+                $scope.$apply();
 
                 // hide the dropdown on scroll down
                 $scope.hide_menu();
@@ -217,9 +222,6 @@
                     fade.style.opacity = 0; 
                 }
                 
-                // make the dom FEEL IT
-                $scope.$apply();
-
             }
 
         }
