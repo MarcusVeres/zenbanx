@@ -28,7 +28,8 @@
         _this.end = 'unset'; 
 
         _this.init_phone_pos = 'unset';     // y coordinate of phone before any animations are applied
-        _this.margin_from_top = 200         // distance from top of browser that phone "snaps" to 
+        _this.margin_from_top = 120;        // distance from top of browser that phone "snaps" to 
+        _this.buffer = 200;                 // distance from transition point that the animation switches
 
         // getter and setter methods
 
@@ -131,31 +132,36 @@
                 // for phone sticky
                 // TODO: if( not landing page, don't apply this code
 
+                var margin = coordinates.get('margin_from_top');
+
+                var buffer = coordinates.get('buffer');
                 var t1 = coordinates.get('t1');
                 var t2 = coordinates.get('t2');
                 var t3 = coordinates.get('t3');
                 var end = coordinates.get('end');
-                var margin = coordinates.get('margin_from_top');
 
                 var top_limit = t1.y;
                 var bottom_limit = end.y;
+
+                // compensate for header n' shit
+                screen_top += coordinates.get('margin_from_top');
 
                 if( screen_top > top_limit && screen_top < bottom_limit ){
                     document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
                 }
 
                 // animation shifts
-                if( screen_top < t2.y )
+                if( screen_top < t2.y - buffer )
                 {
                     console.log("first");
                     $scope.set_animation(1);
                 }
-                else if (screen_top > t2.y && screen_top < t3.y)
+                else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
                 {
                     console.log("second");
                     $scope.set_animation(2);
                 }
-                else if ( screen_top > t3.y)
+                else if ( screen_top > t3.y - buffer )
                 {
                     console.log("third");
                     $scope.set_animation(3);
