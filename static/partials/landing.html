@@ -94,13 +94,6 @@
 </section>
 
 
-<section class="get-zen">
-    <a href="/get-zenbanx">
-        <button class="zen-button">Get ZenBanx</button>
-    </a>
-</section>
-
-
 <section class="divider">
 <div class="content-wrapper">
     <p class="review">
@@ -307,4 +300,19 @@
 
 </div>
 </section>
+
+
+<!-- modal window -->
+<div ng-controller="ModalDemoCtrl">
+
+    <!-- the modal content -->
+    <script type="text/ng-template" id="myModalContent.html">
+        <ng-include src="'/static/partials/get-zenbanx.html'"></ng-include>
+    </script>
+
+    <section class="get-zen">
+        <button class="zen-button" ng-click="open()">Get ZenBanx</button>
+    </section>
+
+</div>
 
