@@ -498,6 +498,10 @@ section.legal
     h3
         text-align: left
 
+    ul
+        padding-left: 2.4rem
+        padding-top: 0.6rem
+
 
 section.lightbox
     text-align: center
@@ -527,10 +531,6 @@ section.lightbox
     .input-group
         margin: 0.6rem
 
-
-section.toc
-    // table of contents
-    background: #F9F9F9
 
 @media screen and (max-width: 768px)
 
@@ -748,6 +748,7 @@ section.toc
     margin: 3rem 0
 
     li
+        margin-right: 2rem
         border-top: 1px solid $light_gray
         padding: 1rem
 
@@ -768,10 +769,18 @@ section.toc
 
 @media screen and (min-width: 768px)
 
+    section.toc
+        background: #F9F9F9
+
+        .content-wrapper
+            padding: 0
+
     .table-of-contents    
+        margin: 6rem 0 0 0 
 
         li
             display: inline-block
+            border: none
             
             &:last-child
                 border-bottom: none
