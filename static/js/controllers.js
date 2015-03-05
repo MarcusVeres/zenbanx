@@ -32,6 +32,12 @@
 
             // 
 
+            $scope.set_animation = function( number ) {
+                $scope.which_animation = number;
+            }
+
+            // 
+
             $scope.menu_visible = false;
 
             $scope.hide_menu = function() {
@@ -72,10 +78,6 @@
             window.onscroll = function (event) {
             // called when the window is scrolled.
 
-                var el = document.getElementById('proposition-7');
-                var prop = el.getBoundingClientRect().top;
-                console.log("el is:", prop, "from the top.");
-
                 // get scroll position
                 var top = window.pageYOffset || document.documentElement.scrollTop; 
                 //console.log(top);
@@ -90,10 +92,6 @@
                 // hide the dropdown on scroll down
                 $scope.hide_menu();
 
-
-
-                // new method: animation toggling
-
                 // for phone sticky
                 if( top > first_start && top < third_stop ){
                     document.getElementById("mega-phone").style.marginTop = (top - first_start) + "px";
@@ -101,13 +99,16 @@
 
                 // animation shifts
                 if( top > first_start && top < first_stop ){
-                    $scope.which_animation = 1;
+                    console.log("first");
+                    $scope.set_animation(1);
                 }
                 else if ( top > second_start && top < second_stop ) {
-                    $scope.which_animation = 2;
+                    console.log("second");
+                    $scope.set_animation(2);
                 }
                 else if ( top > third_start && top < third_stop ) {
-                    $scope.which_animation = 3;
+                    console.log("third");
+                    $scope.set_animation(3);
                 }
                 else {
                     $scope.which_animation = 0;
@@ -185,9 +186,9 @@
 
 
             // determines which animation should be visible
-            $scope.which_animation = 0;
+            _this.which_animation = 0;
 
-            $scope.is_animation = function( number ){
+            _this.is_animation = function( number ){
                 if( $scope.which_animation == number ){
                     return true;
                 } else {
