@@ -83,7 +83,7 @@
                 var second_stop = 3840;
 
                 var third_start = 4135;
-                var third_stop = 4780;
+                var third_stop = 7050;
 
 
                 // new method: animation toggling
