@@ -90,6 +90,9 @@ p.fineprint
 .centered
     text-align: center
 
+.tm
+    font-size: 1.3rem
+    display: inline-block
 
 // wrappers
 
@@ -295,10 +298,37 @@ h3.call-to-action
     top: 0
     width: 100%
     z-index: 98
-    
+
+    .logo-wrapper
+        float: left
+        color: white
+        text-decoration: none !important
+
+    .wordmark
+        display: table-cell
+        padding: 0.4rem 1rem
+        height: 60px
+        width: 200px
+        vertical-align: middle
+
+        h1, h2
+            color: white !important
+            margin: 0
+            padding: 0
+            text-align: left
+            line-height: 1rem 
+
+        h1
+            font-weight: 500
+            font-size: 24px
+            margin-bottom: 10px
+
+    .tagline
+        font-size: 10px
+
     .logo
         float: left
-        max-width: 220px
+        max-width: 55px
         margin-left: 1.5rem
 
     .open-menu
@@ -623,7 +653,7 @@ section.lightbox
     @include unstyled-list()
     color: $gray
     text-align: center
-    font-size: 1.4rem
+    font-size: 1.8rem
     margin-bottom: 8rem
     
     li
