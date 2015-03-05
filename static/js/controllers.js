@@ -84,6 +84,11 @@
             }
 
 
+            // compress the scrollbar
+           
+            $scope.compress_ribbon = false;
+
+
             // determines visibility of the overlay/underlay dropdown menu
 
             $scope.menu_visible = false;
@@ -131,7 +136,11 @@
 
 
                 // for phone sticky
-                // TODO: if( not landing page, don't apply this code
+                // if we are not on a cell-phone page, don't apply this code
+                // not the cleanest way to do this, but again, in a huge rush
+                if( !document.getElementById("mega-phone") ){
+                    return;
+                }
 
                 var margin = coordinates.get('margin_from_top');
 
@@ -224,6 +233,8 @@
         {
             console.log("loading landing controller");
 
+            var _this = this;
+
             // wowjs animations
             new WOW().init();
 
@@ -264,12 +275,6 @@
                 coordinates.set( "init_phone_pos" , document.getElementById('mega-phone').getBoundingClientRect().top );
 
             });
-
-
-            var _this = this;
-
-            // compress the scrollbar
-            $scope.compress_ribbon = false;
 
 
             // make phones position fixed
