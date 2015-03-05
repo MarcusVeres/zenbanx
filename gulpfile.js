@@ -70,5 +70,5 @@ gulp.task('watch', function() {
     // gulp.watch( paths.js , ['scripts']);
 });
 
-gulp.task('default', ['clean', 'ruby_sass', 'watch']);
+gulp.task('default', ['ruby_sass', 'watch']);
 
