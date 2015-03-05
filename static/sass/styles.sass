@@ -655,9 +655,7 @@ section.lightbox
         padding-top: 0.8rem
         border-top: 1px solid $light_gray
 
-@media screen and ( min-width : 768px )
-
-    .features
+    @media screen and ( min-width : 768px )
 
         li
             display: inline-block
@@ -666,9 +664,13 @@ section.lightbox
             margin-top: 0
             margin-bottom: 0
 
-@media screen and ( min-width : 992px )
 
-    // something
+    @media screen and ( max-width: 992px ) and ( min-width: 767px )
+
+        li:nth-child(4)
+            clear: both
+            
+
 
 .flags
     @include unstyled-list()
