@@ -129,7 +129,6 @@
                     $scope.expand_the_ribbon();
                 } else {
                     $scope.compress_the_ribbon();
-                    console.log("what's goin on here?");
                 }
 
                 // update the dom to affect the header
@@ -168,17 +167,17 @@
                 // animation shifts
                 if( screen_top < t2.y - buffer )
                 {
-                    console.log("first");
+                    //console.log("first");
                     $scope.set_animation(1);
                 }
                 else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
                 {
-                    console.log("second");
+                    //console.log("second");
                     $scope.set_animation(2);
                 }
                 else if ( screen_top > t3.y - buffer )
                 {
-                    console.log("third");
+                    //console.log("third");
                     $scope.set_animation(3);
                 }
                 else {
@@ -191,31 +190,31 @@
                 if( screen_top < t1.y + 200 )
                 {
                     var opacity = (t1.y - screen_top) / 100;
-                    console.log("O:", opacity);
+                    //console.log("O:", opacity);
                     fade.style.opacity = opacity;
                 }
                 else if(( screen_top > t2.y - 800 ) && (screen_top < t2.y - 400 ))
                 {
                     var opacity = (screen_top - t2.y + 800) / 100;
-                    console.log("O:", opacity);
+                    //console.log("O:", opacity);
                     fade.style.opacity = opacity; 
                 }
                 else if(( screen_top > t2.y - 400 ) && (screen_top < t2.y))
                 {
                     var opacity = (t2.y - screen_top - 200) / 100;
-                    console.log("O:", opacity);
+                    //console.log("O:", opacity);
                     fade.style.opacity = opacity; 
                 }
                 else if(( screen_top > t3.y - 800 ) && (screen_top < t3.y - 400 ))
                 {
                     var opacity = (screen_top - t3.y + 800) / 100;
-                    console.log("O:", opacity);
+                    //console.log("O:", opacity);
                     fade.style.opacity = opacity; 
                 }
                 else if(( screen_top > t3.y - 400 ) && (screen_top < t3.y))
                 {
                     var opacity = (t3.y - screen_top - 200) / 100;
-                    console.log("O:", opacity);
+                    //console.log("O:", opacity);
                     fade.style.opacity = opacity; 
                 } 
                 else {
