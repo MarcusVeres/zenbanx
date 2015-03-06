@@ -211,21 +211,13 @@ h3.call-to-action
     background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
 //    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
 
-@media screen and ( min-width : 768px )
+@media screen and ( max-width : 1140px )
     
     .zen-button
         right: 0
-        margin-left: 100px
         margin-right: 40px
         top: 392px
-
-@media screen and ( min-width : 980px )
-
-    .zen-button
-        left: 50%
-        margin-left: 350px
-        margin-right: 0
-        top: 392px
+        position: fixed
 
 @media screen and (max-width : 768px )
 
@@ -237,6 +229,17 @@ h3.call-to-action
         padding-top: 16px
         padding-bottom: 16px
         border-top: 2px solid #d51214
+        bottom: 0
+        top: auto
+        margin: 0
+    
+@media screen and ( min-width: 1141px )
+
+    .zen-button
+        left: 50%
+        margin-left: 310px
+        margin-right: 0
+        top: 392px
 
 
 // nav
@@ -637,17 +640,19 @@ section.lightbox
     #interstitial
         z-index: 20
         
-
-@media screen and (min-width : 768px )
+    @media screen and (min-width : 768px )
     
-    // to get the parallax effect working, this needs to be absolute
-    // otherwise the margin will push down all rows below it
-    .phone-wrapper
+        // to get the parallax effect working, this needs to be absolute
+        // otherwise the margin will push down all rows below it
         position: absolute
-        margin-left: 100px
+        margin-left: 10px
 
-    .phone-wrapper.sticky
-        margin-top: 1px
+        &.sticky
+            margin-top: 1px
+
+    @media screen and (min-width : 992px )
+
+        margin-left: 100px
 
 
 .video-placeholder
