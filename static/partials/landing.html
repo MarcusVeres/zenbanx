@@ -129,11 +129,28 @@
 
             <!-- mega phone shows all three animations -->
             <div id="mega-phone" class="hide-from-mobile phone-wrapper" ng-class="{sticky: lc.is_sticky(4)}">
+
                 <img class="phone-background" src="/assets/img/phone-background.png" />
                 <img id="interstitial" class="animation" src="/assets/img/phone-interstitial.png" />
+
+                <!-- first animation -->
                 <img class="animation" src="/assets/animations/exchange-money.gif" ng-class="{top: lc.is_animation(1)}" />
+                <video autoplay loop muted poster="/assets/animations/exchange-money.gif" class="animation webm" ng-class="{top: lc.is_animation(1)}">
+                    <source src="/assets/animations/exchange-money.webmhd.webm" type="video/webm">
+                </video>
+
+                <!-- second animation -->
                 <img class="animation" src="/assets/animations/send-money.gif" ng-class="{top: lc.is_animation(2)}" />
+                <video autoplay loop muted poster="/assets/animations/send-money.gif" class="animation webm" ng-class="{top: lc.is_animation(2)}">
+                    <source src="/assets/animations/send-money.webmhd.webm" type="video/webm">
+                </video>
+
+                <!-- third animation -->
                 <img class="animation" src="/assets/animations/add-contact.gif" ng-class="{top: lc.is_animation(3)}" />
+                <video autoplay loop muted poster="/assets/animations/add-contact.gif" class="animation webm" ng-class="{top: lc.is_animation(3)}">
+                    <source src="/assets/animations/add-contact.webmhd.webm" type="video/webm">
+                </video>
+
                 <div class="clearfix"></div>
             </div>
             <!-- mega phone -->
