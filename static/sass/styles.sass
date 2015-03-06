@@ -144,14 +144,6 @@ video#bgvid
         display: none
 
 
-.still-frame
-    width: 100%
-    display: none
-
-    @media screen and ( min-width: 768px )
-        display: block
-
-
 // components
 
 .contact-form
@@ -504,7 +496,23 @@ section.banner.main
     position: relative
     height: 440px
     overflow: hidden
-    background-image: url('/assets/img/banner-main.png')
+    background-color: $purple
+    background-image: url('/assets/img/header/Zenbanx.png')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: 50% 50%
+
+    &.bogota
+        background-image: url('/assets/img/header/Bogota.png')
+    &.la
+        background-image: url('/assets/img/header/LA.png')
+    &.paris
+        background-image: url('/assets/img/header/Paris.png')
+    &.thailand
+        background-image: url('/assets/img/header/Thailand.png')
+    &.zenbanx
+        background-image: url('/assets/img/header/Zenbanx.png')
+
 
 section.sub-main
     
@@ -646,9 +654,19 @@ section.lightbox
         left: 23px
         z-index: 12
 
+        // hide from desktop devices
+        @media screen and ( min-width : 768 )
+            display: none
+
         &.webm
             width: 210px
             margin-right: -1px
+
+            // hide from mobile devices
+            @media screen and ( max-width : 768 )
+                display: none
+
+
 
     .animation.top
         z-index: 15
@@ -678,9 +696,8 @@ section.lightbox
     max-width: 640px
     position: relative
 
-@media screen and (min-width : 768px )
+    @media screen and (min-width : 768px )
 
-    .video-placeholder
         margin: 65px auto 55px auto
 
 
