@@ -1,10 +1,12 @@
 
 ## The Banks of Zen
 
-Version 0.5.2
+Version 0.5.5
 
 
 ### Notes
+
+- The sandbox is reachable through the "Dev" link in the footer. Click that and you're there
 
 - You will need a mod-rewrite on the server ( e.g. https://gist.github.com/mshuffett/5973441 )
 - News and FAQ Sections pull data from the \*.json files in: /assets/data/
