@@ -260,6 +260,27 @@ h3.call-to-action
     position: relative
 
 
+.main-menu
+    clear: both
+    @include unstyled-list()
+    color: white
+    text-transform: uppercase
+    font-size: 1.8rem
+    text-align: center
+
+    li
+        line-height: 4rem
+
+    a
+        color: white
+        text-decoration: none
+        font-weight: 300
+        padding: 1rem
+
+        &:hover
+            font-weight: 500
+
+
 .menu-wrapper
     position: absolute
     top: 44px
@@ -336,20 +357,38 @@ h3.call-to-action
         padding: 1rem
         cursor: pointer
 
-@media screen and (max-width: 500px )
+@media screen and ( max-width: 500px )
+
+    .ribbon svg
+        height: 80px
+        fill: $purple
 
     .main-menu-header
         @include grayscale-shadow( 12 , 0.3 )
         background: $purple
         height: 80px
 
-    .ribbon svg
-        height: 80px
-        fill: $purple
+        .menu-wrapper
+            top: 12px
 
-    .menu-wrapper
-        top: 12px
-    
+        .wordmark
+            width: 185px
+
+            h1
+                font-size: 20px
+
+        .logo
+            max-width: 55px
+            margin-left: 1.2rem
+
+@media screen and ( max-width: 360px )
+
+    .main-menu-header
+
+        .wordmark
+            width: 130px
+
+//
 
 .main-menu-overlay
     position: fixed
@@ -379,38 +418,15 @@ h3.call-to-action
     .main-menu
         text-align: right
 
-@media screen and (max-width: 1440px)
+    @media screen and ( max-width: 1440px)
 
-    .main-menu-underlay
         right: 0px
         left: auto
         margin-left: 0
 
-@media screen and (max-width: 768 )
+    @media screen and ( max-width: 768px )
 
-    .main-menu-underlay
-        padding-top: 4px
-
-
-.main-menu
-    clear: both
-    @include unstyled-list()
-    color: white
-    text-transform: uppercase
-    font-size: 1.8rem
-    text-align: center
-
-    li
-        line-height: 4rem
-
-    a
-        color: white
-        text-decoration: none
-        font-weight: 300
-        padding: 1rem
-
-        &:hover
-            font-weight: 500
+        padding-top: 32px
 
 
 .close-menu
