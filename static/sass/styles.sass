@@ -10,8 +10,6 @@
 @import 'properties'
 @import 'typography'
 
-// @import 'overrides' // overrides theme-specific , e.g. bootstrap
-
 
 // -----------------------------------------
 // html elements
@@ -184,7 +182,7 @@ h3.call-to-action
     @include grayscale-shadow( 12 , 0.2 )
     font-weight: 100
     font-size: 1.9rem
-    border: 1px solid #ed282a 
+    border: 1px solid $zen_border
     padding: 30px 
     text-decoration: none 
     text-transform: uppercase
@@ -192,23 +190,23 @@ h3.call-to-action
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3)
     color: #FFFFFF
     letter-spacing: 4px
-    background-color: #F15C5D 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#F15C5D), to(#F69146))
-    background-image: -webkit-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -moz-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -ms-linear-gradient(top, #F15C5D, #F69146)
-    background-image: -o-linear-gradient(top, #F15C5D, #F69146)
-    background-image: linear-gradient(to bottom, #F15C5D, #F69146)
+    background-color: $zen_gradient_top 
+    background-image: -webkit-gradient(linear, left top, left bottom, from($zen_gradient_top), to($zen_gradient_bottom))
+    background-image: -webkit-linear-gradient(top, $zen_gradient_top, $zen_gradient_bottom)
+    background-image: -moz-linear-gradient(top, $zen_gradient_top, $zen_gradient_bottom)
+    background-image: -ms-linear-gradient(top, $zen_gradient_top, $zen_gradient_bottom)
+    background-image: -o-linear-gradient(top, $zen_gradient_top, $zen_gradient_bottom)
+    background-image: linear-gradient(to bottom, $zen_gradient_top, $zen_gradient_bottom)
 //    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#F15C5D, endColorstr=#F69146)
 
 .zen-button:hover
-    background-color: #ed2d2e 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#ed2d2e), to(#f47415))
-    background-image: -webkit-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -moz-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -ms-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: -o-linear-gradient(top, #ed2d2e, #f47415)
-    background-image: linear-gradient(to bottom, #ed2d2e, #f47415)
+    background-color: $zen_rollover_top 
+    background-image: -webkit-gradient(linear, left top, left bottom, from($zen_rollover_top), to($zen_rollover_bottom))
+    background-image: -webkit-linear-gradient(top, $zen_rollover_top, $zen_rollover_bottom)
+    background-image: -moz-linear-gradient(top, $zen_rollover_top, $zen_rollover_bottom)
+    background-image: -ms-linear-gradient(top, $zen_rollover_top, $zen_rollover_bottom)
+    background-image: -o-linear-gradient(top, $zen_rollover_top, $zen_rollover_bottom)
+    background-image: linear-gradient(to bottom, $zen_rollover_top, $zen_rollover_bottom)
 //    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ed2d2e, endColorstr=#f47415)
 
 @media screen and ( max-width : 1140px )
