@@ -111,9 +111,22 @@
 
             // close the menu if the user clicks on a link or changes location
             
-            $scope.$on('$routeChangeSuccess', function () {
+            $scope.$on('$routeChangeSuccess', function () 
+            {
+                // hide the dropdown menu
                 $scope.hide_menu();
+    
+                // scroll the window to the top of the page (people complained about this)
                 window.scrollTo(0,0);
+
+                // reset the mega phone margin
+                var mega_phone = document.getElementById("mega-phone");
+                if( mega_phone ){
+                    //console.log("RESETTING");
+                    mega_phone.style.marginTop = "1px";
+
+                }
+
             });
 
 
