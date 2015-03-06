@@ -168,6 +168,64 @@
 <section class="">
 <div class="content-wrapper">
 
+    <div class="editor">
+        <p class="name">
+            Some Name
+        </p>
+        <p class="contact">
+            Contact info and <a href="mailto:somewhere">email</a>
+        </p>
+    </div>
+
+    <xmp>
+        <div class="editor">
+            <p class="name">
+                Some Name
+            </p>
+            <p class="contact">
+                Contact info and <a href="mailto:somewhere">email</a>
+            </p>
+        </div>
+    </xmp>
+
+    <hr>
+
+    <ul class="posts">
+        <li class="col-xs-12 col-sm-6">
+            <p>
+                <span class="source">Post Source</span>
+                Title of the piece
+            </p>
+            <p class="date">Post Date</p>
+            <a class="media" href="some_url" target="_blank">
+                Call to action &raquo;
+            </a>
+        </li>
+    </ul>
+
+    <xmp>
+
+        <section class="legal">
+        <div class="content-wrapper">
+
+            <ul class="posts">
+                <li class="col-xs-12 col-sm-6" ng-repeat="post in posts">
+                    <p>
+                        <span class="source">{{ post.source }}</span>
+                        {{ post.title }}
+                    </p>
+                    <p class="date">{{ post.date }}</p>
+                    <a class="media" href="{{ post.url }}" target="_blank">
+                        {{ post.call_to_action }} &raquo;
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        </section>
+
+    </xmp>
+
 </div>
 </section>
 
