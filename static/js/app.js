@@ -23,6 +23,11 @@
                     controller: 'LandingController',
                     controllerAs: 'lc'
                 })
+                .when('/_sandbox', {
+                    templateUrl: prefix + '_sandbox.html',
+                    controller: 'TestController',
+                    controllerAs: 'tc'
+                })
                 .when('/about', {
                     templateUrl: prefix + 'about.html',
                     controller: 'TestController',
