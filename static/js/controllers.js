@@ -39,7 +39,7 @@
                 return _this[var_name];
             },
             set: function( var_name , value ) {
-                console.log("setting" , var_name , "to" , value);
+                //console.log("setting" , var_name , "to" , value);
                 _this[var_name] = value;
             },
             get_init_phone_pos: function() {
@@ -55,11 +55,11 @@
                  '$scope','coordinates',
         function( $scope , coordinates )
         {
-            console.log("loading main navigation controller");
+            //console.log("loading main navigation controller");
 
-            console.log("prop:" , coordinates.get('t1') );
-            console.log("prop:" , coordinates.get('t2') );
-            console.log("prop:" , coordinates.get('t3') );
+            //console.log("prop:" , coordinates.get('t1') );
+            //console.log("prop:" , coordinates.get('t2') );
+            //console.log("prop:" , coordinates.get('t3') );
 
 
             // for compressing header
@@ -245,7 +245,7 @@
                  '$scope','$http','coordinates',
         function( $scope , $http , coordinates )
         {
-            console.log("loading landing controller");
+            //console.log("loading landing controller");
 
             var _this = this;
 
@@ -323,7 +323,7 @@
     appControllers.controller( 'TestController' , [
         function()
         {
-            console.log("loading test controller");
+            //console.log("loading test controller");
         }
     ]);
 
@@ -333,7 +333,7 @@
                  '$scope','$http',
         function( $scope , $http )
         {
-            console.log("loading faq controller");
+            //console.log("loading faq controller");
 
             // this is going to pull all frequently asked questions
             $http({
@@ -342,14 +342,14 @@
             })
             .success( function( data )
             {
-                console.log("the faq data that we got is:", data);
+                //console.log("the faq data that we got is:", data);
 
                 // assign the data to a scope variable that we can use in the dom
                 $scope.faq_questions = data;
             })
             .error( function( error )
             {
-                console.log("something went wrong:", error);
+                //console.log("something went wrong:", error);
             });
 
         }
@@ -361,7 +361,7 @@
                  '$scope','$http',
         function( $scope , $http )
         {
-            console.log("loading news controller");
+            //console.log("loading news controller");
 
             // this is going to pull all frequently asked questions
             $http({
@@ -370,14 +370,14 @@
             })
             .success( function( data )
             {
-                console.log("the faq data that we got is:", data);
+                //console.log("the faq data that we got is:", data);
 
                 // assign the data to a scope variable that we can use in the dom
                 $scope.posts = data;
             })
             .error( function( error )
             {
-                console.log("something went wrong:", error);
+                //console.log("something went wrong:", error);
             });
 
         }
@@ -389,7 +389,7 @@
         'ModalDemoCtrl', 
         function( $scope , $modal , $log )
         {
-            console.log("loading modal controller");
+            //console.log("loading modal controller");
 
             $scope.items = ['item1', 'item2', 'item3'];
 
