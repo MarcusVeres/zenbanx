@@ -43,10 +43,10 @@
 
     })();
 
-    var doc_scope = {};
+    // the doc_scope is a replacement for angular's $scope
+    // it was necessary to keep it to simplify the transition from angular to jquery
 
-    // -------------------------------------
-    // extracted from: navigation controller 
+    var doc_scope = {};
 
 
     // for compressing header
@@ -71,16 +71,16 @@
     }
 
 
-        // determines which phone animation will be on top of the others ( visible )
+    // determines which phone animation will be on top of the others ( visible )
 
-        doc_scope.set_animation = function( number ) {
-            // remove any top class
-            $('.top').removeClass('top');
+    doc_scope.set_animation = function( number ) {
+        // remove any top class
+        $('.top').removeClass('top');
 
-            // determine the new top class
-            var selector = ".animation-" + number;
-            $( selector ).addClass('top');
-        }
+        // determine the new top class
+        var selector = ".animation-" + number;
+        $( selector ).addClass('top');
+    }
 
 
     // determines visibility of the overlay/underlay dropdown menu
@@ -106,137 +106,108 @@
     }
 
 
-        // close the menu if the user clicks on a link or changes location
-       
-        /* 
-        doc_scope.$on('$routeChangeSuccess', function () 
-        {
-            // hide the dropdown menu
-            doc_scope.hide_menu();
+    // track window position to manage display of dom elements
 
-            // scroll the window to the top of the page (people complained about this)
-            window.scrollTo(0,0);
+    window.onscroll = function (event) {
 
-            // reset the mega phone margin
-            var mega_phone = document.getElementById("mega-phone");
-            if( mega_phone ){
-                //console.log("RESETTING");
-                mega_phone.style.marginTop = "1px";
+        // get scroll position
+        var screen_top = window.pageYOffset || document.documentElement.scrollTop; 
 
-            }
-
-        });
-        */
-
-        // track window position to manage display of dom elements
-
-        window.onscroll = function (event) {
-
-            // get scroll position
-            var screen_top = window.pageYOffset || document.documentElement.scrollTop; 
-
-            // for ribbon
-            if( screen_top < 100 ){
-                doc_scope.expand_the_ribbon();
-            } else {
-                doc_scope.compress_the_ribbon();
-            }
-
-            // update the dom to affect the header
-            // TODO : update only the header .. i think scope.apply is overkill
-            
-            // !!!!! doc_scope.$apply();
-
-            // hide the dropdown on scroll down
-            doc_scope.hide_menu();
-
-
-            // for phone sticky
-            // if we are not on a cell-phone page, don't apply this code
-            // not the cleanest way to do this, but again, in a huge rush
-            if( !document.getElementById("mega-phone") ){
-                return;
-            }
-
-            var margin = coordinates.get('margin_from_top');
-
-            var buffer = coordinates.get('buffer');
-            var t1 = coordinates.get('t1');
-            var t2 = coordinates.get('t2');
-            var t3 = coordinates.get('t3');
-            var end = coordinates.get('end');
-
-            var top_limit = t1.y;
-            var bottom_limit = end.y;
-
-            // compensate for header n' shit
-            screen_top += coordinates.get('margin_from_top');
-
-            if( screen_top > top_limit && screen_top < bottom_limit ){
-                document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
-            }
-
-            // animation shifts
-            if( screen_top < t2.y - buffer )
-            {
-                //console.log("first");
-                doc_scope.set_animation(1);
-            }
-            else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
-            {
-                //console.log("second");
-                doc_scope.set_animation(2);
-            }
-            else if ( screen_top > t3.y - buffer )
-            {
-                //console.log("third");
-                doc_scope.set_animation(3);
-            }
-            else {
-                doc_scope.set_animation(0);
-            }
-
-            
-            // interstitials
-            var fade = document.getElementById("interstitial"); 
-            if( screen_top < t1.y + 200 )
-            {
-                var opacity = (t1.y - screen_top) / 100;
-                //console.log("O:", opacity);
-                fade.style.opacity = opacity;
-            }
-            else if(( screen_top > t2.y - 800 ) && (screen_top < t2.y - 400 ))
-            {
-                var opacity = (screen_top - t2.y + 800) / 100;
-                //console.log("O:", opacity);
-                fade.style.opacity = opacity; 
-            }
-            else if(( screen_top > t2.y - 400 ) && (screen_top < t2.y))
-            {
-                var opacity = (t2.y - screen_top - 200) / 100;
-                //console.log("O:", opacity);
-                fade.style.opacity = opacity; 
-            }
-            else if(( screen_top > t3.y - 800 ) && (screen_top < t3.y - 400 ))
-            {
-                var opacity = (screen_top - t3.y + 800) / 100;
-                //console.log("O:", opacity);
-                fade.style.opacity = opacity; 
-            }
-            else if(( screen_top > t3.y - 400 ) && (screen_top < t3.y))
-            {
-                var opacity = (t3.y - screen_top - 200) / 100;
-                //console.log("O:", opacity);
-                fade.style.opacity = opacity; 
-            } 
-            else {
-                fade.style.opacity = 0; 
-            }
-            
+        // for ribbon
+        if( screen_top < 100 ){
+            doc_scope.expand_the_ribbon();
+        } else {
+            doc_scope.compress_the_ribbon();
         }
 
-    // ends: navigation controller 
-    // -------------------------------------
+
+        // hide the dropdown on scroll down
+        doc_scope.hide_menu();
+
+
+        // for phone sticky
+        // if we are not on a cell-phone page, don't apply this code
+        // not the cleanest way to do this, but again, in a huge rush
+        if( !document.getElementById("mega-phone") ){
+            return;
+        }
+
+        var margin = coordinates.get('margin_from_top');
+
+        var buffer = coordinates.get('buffer');
+        var t1 = coordinates.get('t1');
+        var t2 = coordinates.get('t2');
+        var t3 = coordinates.get('t3');
+        var end = coordinates.get('end');
+
+        var top_limit = t1.y;
+        var bottom_limit = end.y;
+
+        // compensate for header n' shit
+        screen_top += coordinates.get('margin_from_top');
+
+        if( screen_top > top_limit && screen_top < bottom_limit ){
+            document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
+        }
+
+        // animation shifts
+        if( screen_top < t2.y - buffer )
+        {
+            //console.log("first");
+            doc_scope.set_animation(1);
+        }
+        else if ((screen_top > t2.y - buffer) && (screen_top < t3.y - buffer))
+        {
+            //console.log("second");
+            doc_scope.set_animation(2);
+        }
+        else if ( screen_top > t3.y - buffer )
+        {
+            //console.log("third");
+            doc_scope.set_animation(3);
+        }
+        else {
+            doc_scope.set_animation(0);
+        }
+
+        
+        // interstitials
+        var fade = document.getElementById("interstitial"); 
+        if( screen_top < t1.y + 200 )
+        {
+            var opacity = (t1.y - screen_top) / 100;
+            //console.log("O:", opacity);
+            fade.style.opacity = opacity;
+        }
+        else if(( screen_top > t2.y - 800 ) && (screen_top < t2.y - 400 ))
+        {
+            var opacity = (screen_top - t2.y + 800) / 100;
+            //console.log("O:", opacity);
+            fade.style.opacity = opacity; 
+        }
+        else if(( screen_top > t2.y - 400 ) && (screen_top < t2.y))
+        {
+            var opacity = (t2.y - screen_top - 200) / 100;
+            //console.log("O:", opacity);
+            fade.style.opacity = opacity; 
+        }
+        else if(( screen_top > t3.y - 800 ) && (screen_top < t3.y - 400 ))
+        {
+            var opacity = (screen_top - t3.y + 800) / 100;
+            //console.log("O:", opacity);
+            fade.style.opacity = opacity; 
+        }
+        else if(( screen_top > t3.y - 400 ) && (screen_top < t3.y))
+        {
+            var opacity = (t3.y - screen_top - 200) / 100;
+            //console.log("O:", opacity);
+            fade.style.opacity = opacity; 
+        } 
+        else {
+            fade.style.opacity = 0; 
+        }
+        
+    }
 
 
     // once the document has loaded, call this
@@ -245,16 +216,26 @@
 
         console.log("we has query");
 
+        // try wow js
+        new WOW().init();
+
+        // hide the dropdown menu
+        doc_scope.hide_menu();
+
+        // scroll the window to the top of the page (people complained about this)
+        window.scrollTo(0,0);
+
+        // reset the mega phone top margin, if it exists
+        var mega_phone = document.getElementById("mega-phone");
+        if( mega_phone ){
+            console.log("RESETTING");
+            mega_phone.style.marginTop = "1px";
+        }
 
         // main menu 
         $('#toggle-menu').on('tap click', function(){
             doc_scope.toggle_menu();
         });
-
-
-        // try the wow js
-        new WOW().init();
-
 
         // avoid executing the rest of the animation code if we have no animations
         if( !document.getElementById('transition-1') ){
@@ -294,7 +275,6 @@
 
 
 })($);
-
 
 
 
