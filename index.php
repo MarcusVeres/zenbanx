@@ -321,22 +321,24 @@
 </section>
 
 
-<!-- modal window -->
-<div ng-controller="ModalDemoCtrl">
-
-    <!-- the modal content -->
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="lightbox-close" ng-click="cancel()">
-            <i class="fa fa-fw fa-close"></i>
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- because our close button is outside of a header, we have to add our own code to close the modal -->
+            <div class="lightbox-close" data-dismiss-target="#basicModal" aria-hidden="true">
+                <i class="fa fa-fw fa-close"></i>
+            </div>
+            <div class="modal-body">
+                <?php include('get-zenbanx-form.php'); ?>
+            </div>
         </div>
-        <ng-include src="'/static/partials/get-zenbanx.html'"></ng-include>
-    </script>
-
-    <section class="get-zen">
-        <button class="zen-button" ng-click="open()">Get ZenBanx</button>
-    </section>
-
+    </div>
 </div>
+
+<section class="get-zen">
+    <button class="zen-button" data-toggle="modal" data-target="#basicModal">Get ZenBanx</button>
+</section>
+
 
 <?php include('footer.php'); ?>
 

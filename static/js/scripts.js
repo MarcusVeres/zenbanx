@@ -240,6 +240,13 @@
             doc_scope.toggle_menu();
         });
 
+        // modals
+        $('.lightbox-close').on('tap click', function( event ){
+            var clicked = $(this);
+            var target = clicked.attr('data-dismiss-target');
+            $( target ).modal('hide');
+        });
+
         // avoid executing the rest of the animation code if we have no animations
         if( !document.getElementById('transition-1') ){
             return;

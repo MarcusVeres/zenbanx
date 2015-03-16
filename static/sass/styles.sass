@@ -631,11 +631,22 @@ section.lightbox
     .input-group
         margin: 0.6rem
 
+
+.modal-dialog
+    position: relative
+
 .lightbox-close
     color: #7D7D7D
     padding: 1rem
     float: right
     font-size: 2rem
+    z-index: 1000
+    background: $purple
+    color: $white
+    cursor: pointer
+    position: absolute
+    right: 0
+    top: 0 
 
 
 @media screen and (max-width: 768px)
