@@ -127,7 +127,7 @@
         <div class="col-xs-12 col-sm-4 col-sm-push-4">
 
             <!-- mega phone shows all three animations -->
-            <div id="mega-phone" class="hide-from-mobile phone-wrapper" ng-class="{sticky: lc.is_sticky(4)}">
+            <div id="mega-phone" class="hide-from-mobile phone-wrapper">
 
                 <img class="phone-background" src="/assets/img/phone-background.png" />
                 <img id="interstitial" class="animation" src="/assets/img/phone-interstitial.png" />

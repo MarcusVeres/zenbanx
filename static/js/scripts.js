@@ -239,23 +239,6 @@
     // -------------------------------------
 
 
-    // -------------------------------------
-    // extracted from: landing controller 
-
-            // make phones position fixed
-            doc_scope.which_sticky = 0;
-
-            doc_scope.is_sticky = function( number ){
-                if( doc_scope.which_sticky == number ){
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-    // ends: landing controller 
-    // -------------------------------------
-
     // once the document has loaded, call this
 
     $(document).ready(function(){
