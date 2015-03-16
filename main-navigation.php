@@ -39,26 +39,6 @@
 </section>
 
 
-<!--
-<section class="main-menu-overlay" ng-show="menu_visible">
-<div class="content-wrapper">
-
-    <div class="menu-icon close-menu" ng-click="hide_menu()">
-        <i class="fa fa-close"></i>
-    </div>
-
-    <ul class="main-menu">
-        <li><a href="/about">Who We Are</a></li>
-        <li><a href="/faq">FAQ</a></li>
-        <li><a href="/news">News</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
-
-</div>
-</section>
--->
-
-
 <section class="main-menu-underlay" ng-show="menu_visible" ng-class="{solid: is_ribbon_compressed()}" >
 <div class="content-wrapper">
 

@@ -1,3 +1,4 @@
+<?php include('header.php'); ?>
 
 <section class="headspace">
     <!-- used in place of a graphic banner -->
@@ -36,4 +37,6 @@
 
 </div>
 </section>
+
+<?php include('footer.php'); ?>
 

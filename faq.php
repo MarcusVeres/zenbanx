@@ -1,3 +1,5 @@
+<?php include('header.php'); ?>
+
 <section class="banner main la">
 
     <video autoplay loop muted poster="/assets/img/header/LA.png" id="bgvid">
@@ -79,5 +81,5 @@
 </div>
 </section>
 
-
+<?php include('footer.php'); ?>
 

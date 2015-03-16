@@ -1,3 +1,5 @@
+<?php include('header.php'); ?>
+
 <section>
     <img class="fullwidth" src="/assets/img/banner-news.png" />
 </section>
@@ -92,5 +94,5 @@
 </div>
 </section>
 
-
+<?php include('footer.php'); ?>
 
