@@ -88,6 +88,9 @@
     doc_scope.menu_visible = false;
 
     doc_scope.hide_menu = function() {
+        if ( $('.main-menu-underlay').is(':hidden') ){
+            return;
+        }
         $('.main-menu-underlay').hide();
         doc_scope.menu_visible = false;
     }
