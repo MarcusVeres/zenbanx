@@ -48,22 +48,25 @@
     // -------------------------------------
     // extracted from: navigation controller 
 
-        // for compressing header
 
-        doc_scope.is_ribbon_compressed = function(){
-            console.log("checking ribbon");
-            return doc_scope.ribbon_compressed;
-        };
+    // for compressing header
 
-        doc_scope.compress_the_ribbon = function() {
-            $('.main-menu-header').addClass('solid');
-            doc_scope.ribbon_compressed = true;
-        };
+    doc_scope.is_ribbon_compressed = function(){
+        console.log("checking ribbon");
+        return doc_scope.ribbon_compressed;
+    };
 
-        doc_scope.expand_the_ribbon = function() {
-            $('.main-menu-header').removeClass('solid');
-            doc_scope.ribbon_compressed = false;
-        }
+    doc_scope.compress_the_ribbon = function() {
+        $('.main-menu-header').addClass('solid');
+        $('.ribbon-section').addClass('solid');
+        doc_scope.ribbon_compressed = true;
+    };
+
+    doc_scope.expand_the_ribbon = function() {
+        $('.main-menu-header').removeClass('solid');
+        $('.ribbon-section').removeClass('solid');
+        doc_scope.ribbon_compressed = false;
+    }
 
 
         // determines which phone animation will be on top of the others ( visible )
@@ -71,11 +74,6 @@
         doc_scope.set_animation = function( number ) {
             doc_scope.which_animation = number;
         }
-
-
-        // compress the scrollbar
-       
-        doc_scope.compress_ribbon = false;
 
 
         // determines visibility of the overlay/underlay dropdown menu
@@ -137,6 +135,7 @@
 
             // update the dom to affect the header
             // TODO : update only the header .. i think scope.apply is overkill
+            
             // !!!!! doc_scope.$apply();
 
             // hide the dropdown on scroll down

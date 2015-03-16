@@ -1,4 +1,4 @@
-<section class="ribbon-section" ng-class="{solid: is_ribbon_compressed()}" >
+<section class="ribbon-section">
     <!-- note:  eventually the ribbon will reside inside "ribbon wrapper", 
                 but we need to figure out how the sides will be rectangular over a certain width -->
     <div class="ribbon">
