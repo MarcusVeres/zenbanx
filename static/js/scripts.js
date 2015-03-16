@@ -76,25 +76,27 @@
         }
 
 
-        // determines visibility of the overlay/underlay dropdown menu
+    // determines visibility of the overlay/underlay dropdown menu
 
+    doc_scope.menu_visible = false;
+
+    doc_scope.hide_menu = function() {
+        $('.main-menu-underlay').hide();
         doc_scope.menu_visible = false;
+    }
 
-        doc_scope.hide_menu = function() {
-            doc_scope.menu_visible = false;
-        }
+    doc_scope.show_menu = function() {
+        $('.main-menu-underlay').show();
+        doc_scope.menu_visible = true;
+    }
 
-        doc_scope.show_menu = function() {
-            doc_scope.menu_visible = true;
-        }
-
-        doc_scope.toggle_menu = function() {
-            if( doc_scope.menu_visible ) {
-                doc_scope.hide_menu();
-                return;
-            } 
-            doc_scope.show_menu();
-        }
+    doc_scope.toggle_menu = function() {
+        if( doc_scope.menu_visible ) {
+            doc_scope.hide_menu();
+            return;
+        } 
+        doc_scope.show_menu();
+    }
 
 
         // close the menu if the user clicks on a link or changes location
@@ -264,6 +266,13 @@
     $(document).ready(function(){
 
         console.log("we has query");
+
+
+        // main menu 
+        $('#toggle-menu').on('tap click', function(){
+            doc_scope.toggle_menu();
+        });
+
 
         // try the wow js
         new WOW().init();
