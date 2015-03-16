@@ -26,20 +26,27 @@
 
     <hr>
 
+    <?php 
+        $root = $_SERVER['DOCUMENT_ROOT']; 
+        $json = file_get_contents( $root . '/assets/data/news.json' );
+        $posts = json_decode($json);
+    ?>
+
     <ul class="posts">
-        <li class="col-xs-12 col-sm-6" ng-repeat="post in posts">
+        <?php foreach($posts as $post): ?>
+        <li class="col-xs-12 col-sm-6">
             <p>
-                <span class="source">{{ post.source }}</span>
-                {{ post.title }}
+                <span class="source"><?php echo $post->source; ?></span>
+                <?php echo $post->title ?>
             </p>
-            <p class="date">{{ post.date }}</p>
-            <a class="media" href="{{ post.url }}" target="_blank">
-                {{ post.call_to_action }} &raquo;
+            <p class="date"><?php echo $post->date ?></p>
+            <a class="media" href="<?php echo $post->url ?>" target="_blank">
+                <?php echo $post->call_to_action ?> &raquo;
             </a>
         </li>
+        <?php endforeach; ?>
     </ul>
         
-
     <div class="clearfix"></div>
 
 </div>
