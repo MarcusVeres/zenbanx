@@ -70,6 +70,7 @@
             <?php endforeach; ?>
 
         </div>
+
     <?php endforeach; ?>
 
     <!--
