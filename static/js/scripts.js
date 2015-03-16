@@ -279,6 +279,12 @@
         // try the wow js
         new WOW().init();
 
+
+        // avoid executing the rest of the animation code if we have no animations
+        if( !document.getElementById('transition-1') ){
+            return;
+        }
+
         // update the transitions 
         // refer to the 'coordinates' service for more information
         
