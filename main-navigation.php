@@ -9,7 +9,7 @@
 </section>
 
 
-<section class="main-menu-header" ng-class="{solid: is_ribbon_compressed()}" >
+<section class="main-menu-header">
 <div class="ribbon-wrapper">
 
     <div class="menu-wrapper">

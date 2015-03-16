@@ -6,25 +6,25 @@
 
     // handles the coordinates and positioning of dom elements
     // it is used to manage the behavior and animations of the phone and text
-    
-    var coordinates = function(){
+   
+    var coordinates = new (function(){
 
         var _this = this;
 
         // these are the transitions
         // a transition point is a dom element that is parallel to the scrolling phone
         // at the time of an animation switch
-        _this.t1 = 'unset'; 
-        _this.t2 = 'unset';
-        _this.t3 = 'unset';
+        this.t1 = 'unset'; 
+        this.t2 = 'unset';
+        this.t3 = 'unset';
 
         // start and end points of animation / scrolling
-        _this.start = 'unset';
-        _this.end = 'unset'; 
+        this.start = 'unset';
+        this.end = 'unset'; 
 
-        _this.init_phone_pos = 'unset';     // y coordinate of phone before any animations are applied
-        _this.margin_from_top = 160;        // distance from top of browser that phone "snaps" to 
-        _this.buffer = 200;                 // distance from transition point that the animation switches
+        this.init_phone_pos = 'unset';     // y coordinate of phone before any animations are applied
+        this.margin_from_top = 160;        // distance from top of browser that phone "snaps" to 
+        this.buffer = 200;                 // distance from transition point that the animation switches
 
         // getter and setter methods
 
@@ -43,20 +43,25 @@
 
     })();
 
+    var doc_scope = {};
+
     // -------------------------------------
     // extracted from: navigation controller 
 
         // for compressing header
 
         doc_scope.is_ribbon_compressed = function(){
+            console.log("checking ribbon");
             return doc_scope.ribbon_compressed;
         };
 
         doc_scope.compress_the_ribbon = function() {
+            $('.main-menu-header').addClass('solid');
             doc_scope.ribbon_compressed = true;
         };
 
         doc_scope.expand_the_ribbon = function() {
+            $('.main-menu-header').removeClass('solid');
             doc_scope.ribbon_compressed = false;
         }
 
@@ -132,7 +137,7 @@
 
             // update the dom to affect the header
             // TODO : update only the header .. i think scope.apply is overkill
-            doc_scope.$apply();
+            // !!!!! doc_scope.$apply();
 
             // hide the dropdown on scroll down
             doc_scope.hide_menu();
