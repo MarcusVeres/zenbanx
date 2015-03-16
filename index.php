@@ -133,20 +133,20 @@
                 <img id="interstitial" class="animation" src="/assets/img/phone-interstitial.png" />
 
                 <!-- first animation -->
-                <img class="animation" src="/assets/animations/exchange-money.gif" ng-class="{top: lc.is_animation(1)}" />
-                <video autoplay loop muted poster="/assets/animations/exchange-money.gif" class="animation webm" ng-class="{top: lc.is_animation(1)}">
+                <img class="animation animation-1" src="/assets/animations/exchange-money.gif" />
+                <video class="animation animation-1 webm" autoplay loop muted poster="/assets/animations/exchange-money.gif">
                     <source src="/assets/animations/exchange-money.webmhd.webm" type="video/webm">
                 </video>
 
                 <!-- second animation -->
-                <img class="animation" src="/assets/animations/send-money.gif" ng-class="{top: lc.is_animation(2)}" />
-                <video autoplay loop muted poster="/assets/animations/send-money.gif" class="animation webm" ng-class="{top: lc.is_animation(2)}">
+                <img class="animation animation-2" src="/assets/animations/send-money.gif" />
+                <video class="animation animation-2 webm" autoplay loop muted poster="/assets/animations/send-money.gif">
                     <source src="/assets/animations/send-money.webmhd.webm" type="video/webm">
                 </video>
 
                 <!-- third animation -->
-                <img class="animation" src="/assets/animations/add-contact.gif" ng-class="{top: lc.is_animation(3)}" />
-                <video autoplay loop muted poster="/assets/animations/add-contact.gif" class="animation webm" ng-class="{top: lc.is_animation(3)}">
+                <img class="animation animation-3" src="/assets/animations/add-contact.gif" />
+                <video class="animation animation-3 webm" autoplay loop muted poster="/assets/animations/add-contact.gif">
                     <source src="/assets/animations/add-contact.webmhd.webm" type="video/webm">
                 </video>
 

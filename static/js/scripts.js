@@ -74,7 +74,12 @@
         // determines which phone animation will be on top of the others ( visible )
 
         doc_scope.set_animation = function( number ) {
-            doc_scope.which_animation = number;
+            // remove any top class
+            $('.top').removeClass('top');
+
+            // determine the new top class
+            var selector = ".animation-" + number;
+            $( selector ).addClass('top');
         }
 
 
@@ -188,7 +193,7 @@
                 doc_scope.set_animation(3);
             }
             else {
-                doc_scope.which_animation = 0;
+                doc_scope.set_animation(0);
             }
 
             
@@ -242,18 +247,6 @@
 
             doc_scope.is_sticky = function( number ){
                 if( doc_scope.which_sticky == number ){
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-
-
-            // determines which animation should be visible
-            doc_scope.which_animation = 0;
-
-            doc_scope.is_animation = function( number ){
-                if( doc_scope.which_animation == number ){
                     return true;
                 } else {
                     return false;
