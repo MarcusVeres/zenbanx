@@ -59,12 +59,14 @@
     doc_scope.compress_the_ribbon = function() {
         $('.main-menu-header').addClass('solid');
         $('.ribbon-section').addClass('solid');
+        $('.main-menu-underlay').addClass('solid');
         doc_scope.ribbon_compressed = true;
     };
 
     doc_scope.expand_the_ribbon = function() {
         $('.main-menu-header').removeClass('solid');
         $('.ribbon-section').removeClass('solid');
+        $('.main-menu-underlay').removeClass('solid');
         doc_scope.ribbon_compressed = false;
     }
 

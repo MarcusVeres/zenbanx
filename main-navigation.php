@@ -39,7 +39,7 @@
 </section>
 
 
-<section class="main-menu-underlay" ng-class="{solid: is_ribbon_compressed()}" >
+<section class="main-menu-underlay">
 <div class="content-wrapper">
 
     <ul class="main-menu">
