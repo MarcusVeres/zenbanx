@@ -41,9 +41,29 @@
         </div>
     </div>
 
-    <!--
-    <p class="larger">You can also phone us at 877-ZENBANX (877-936-2269)</p>
-    -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+            <p>&mdash; or &mdash;</p> 
+            <p>just download it</p>
+
+            <ul class="app-store-icons">
+                <li>
+                    <a href="#">
+                        <img src="https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <section class="padded"></section>
 
     <h3>Step Two: Sign Up for an Account</h3>
     <p>
