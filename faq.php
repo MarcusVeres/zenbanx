@@ -2,9 +2,9 @@
 
 <section class="banner main la">
 
-    <video autoplay loop muted poster="/assets/img/header/LA.png" id="bgvid">
-        <source src="/assets/video/LA.webmhd.webm" type="video/webm">
-        <source src="/assets/video/LA.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/LA.png" id="bgvid">
+        <source src="/static/video/LA.webmhd.webm" type="video/webm">
+        <source src="/static/video/LA.mp4" type="video/mp4">
     </video>
 
 </section>
@@ -53,7 +53,7 @@
 
     <?php 
         $root = $_SERVER['DOCUMENT_ROOT']; 
-        $json = file_get_contents( $root . '/assets/data/faqs.json' );
+        $json = file_get_contents( $root . '/static/data/faqs.json' );
         $categories = json_decode($json);
     ?>
 

@@ -15,19 +15,31 @@
     <div class="menu-wrapper">
         <a href="/" class="logo-wrapper">
             <h1 class="wordmark">
-                <img src="/assets/img/wordmark.png" alt="ZenBanx :: Around the corner, around the world." />
+                <img src="/static/img/wordmark.png" alt="ZenBanx :: Around the corner, around the world." />
             </h1>
         </a>
+        
         <div class="pull-right context-menu">
             <ul class="menu-group">
                 <li>
                     <div class="menu-button">
-                        <a href="/sign-in">Sign In</a>
+                        <a href="http://zbc.zenbanx.ca">Sign In</a>
                     </div>
                 </li>
                 <li>
                     <div class="menu-icon open-menu" id="toggle-menu">
                         <i class="fa fa-bars"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-right context-menu">
+            <ul class="menu-group">
+                <li>
+                    <div class="menu-button-country">
+                        
+                    CAN <span class="light">| <a href="http://zenbanx.com">US</a></span>
+                        
                     </div>
                 </li>
             </ul>

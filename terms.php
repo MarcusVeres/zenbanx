@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 <section>
-    <img class="fullwidth" src="/assets/img/banner-news.png" />
+    <img class="fullwidth" src="/static/img/banner-news.png" />
 </section>
 
 <section class="legal">

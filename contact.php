@@ -2,9 +2,9 @@
 
 <section class="banner main contact">
 
-    <video autoplay loop muted poster="/assets/img/header/Bogota.png" id="bgvid">
-        <source src="/assets/video/Bogota.webmhd.webm" type="video/webm">
-        <source src="/assets/video/Bogota.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/Bogota.png" id="bgvid">
+        <source src="/static/video/Bogota.webmhd.webm" type="video/webm">
+        <source src="/static/video/Bogota.mp4" type="video/mp4">
     </video>
 
 </section>

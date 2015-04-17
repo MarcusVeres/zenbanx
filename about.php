@@ -2,9 +2,9 @@
 
 <section class="banner main thailand">
 
-    <video autoplay loop muted poster="/assets/img/header/Thailand.png" id="bgvid">
-        <source src="/assets/video/Thailand.webmhd.webm" type="video/webm">
-        <source src="/assets/video/Thailand.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/Thailand.png" id="bgvid">
+        <source src="/static/video/Thailand.webmhd.webm" type="video/webm">
+        <source src="/static/video/Thailand.mp4" type="video/mp4">
     </video>
 
 </section>
@@ -91,7 +91,7 @@
 
     <ul class="team">
         <li>
-            <img src="/assets/img/team/arkadi.png" />
+            <img src="/static/img/team/arkadi.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 Arkadi Kuhlmann
@@ -101,7 +101,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/richard.png" />
+            <img src="/static/img/team/richard.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 Richard Senechal
@@ -111,7 +111,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/geoff.png" />
+            <img src="/static/img/team/geoff.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 Geoff Ritchie 
@@ -121,7 +121,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/john-r.png" />
+            <img src="/static/img/team/john-r.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 John Reynolds 
@@ -131,7 +131,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/john-h.png" />
+            <img src="/static/img/team/john-h.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 John Harrison
@@ -141,7 +141,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/meagan.png" />
+            <img src="/static/img/team/meagan.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 Meagan VanAndel
@@ -151,7 +151,7 @@
             </h5>
         </li>
         <li>
-            <img src="/assets/img/team/daniela.png" />
+            <img src="/static/img/team/daniela.png" />
             <h4 class="name">
                 <i class="fa fa-fw fa-linkedin-square"></i> 
                 Daniela Bolkart

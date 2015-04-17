@@ -2,9 +2,9 @@
 
 <section class="banner main paris">
 
-    <video autoplay loop muted poster="/assets/img/header/Paris.png" id="bgvid">
-        <source src="/assets/video/Paris.webmhd.webm" type="video/webm">
-        <source src="/assets/video/Paris.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/Paris.png" id="bgvid">
+        <source src="/static/video/Paris.webmhd.webm" type="video/webm">
+        <source src="/static/video/Paris.mp4" type="video/mp4">
     </video>
 
 </section>
@@ -28,7 +28,7 @@
 
     <?php 
         $root = $_SERVER['DOCUMENT_ROOT']; 
-        $json = file_get_contents( $root . '/assets/data/news.json' );
+        $json = file_get_contents( $root . '/static/data/news.json' );
         $posts = json_decode($json);
     ?>
 

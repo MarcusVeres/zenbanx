@@ -54,7 +54,7 @@
             <ul class="app-store-icons">
                 <li>
                     <a href="#">
-                        <img src="https://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_appstore-lrg.png" />
+                        <img src="https://linkmaker.itunes.apple.com/htmlResources/static/en_us//images/web/linkmaker/badge_appstore-lrg.png" />
                     </a>
                 </li>
                 <li>

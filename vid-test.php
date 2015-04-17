@@ -4,9 +4,9 @@
 <!--
 <section class="banner main contact">
 
-    <video autoplay loop muted poster="/assets/img/header/Bogota.png" id="bgvid">
-        <source src="/assets/video/Bogota.webmhd.webm" type="video/webm">
-        <source src="/assets/video/Bogota.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/Bogota.png" id="bgvid">
+        <source src="/static/video/Bogota.webmhd.webm" type="video/webm">
+        <source src="/static/video/Bogota.mp4" type="video/mp4">
     </video>
 
 </section>
@@ -57,11 +57,11 @@
     <!--<video id="example_video_1" class="video-js vjs-default-skin"-->
     <video id="bgvid" class="video-js"
       controls autoplay loop preload="auto"
-      poster="/assets/img/header/Bogota.png"
+      poster="/static/img/header/Bogota.png"
       data-setup='{ "example_option":true , "autoplay":true, "loop":true, "width":"100%", "height":"auto" }'>
-        <source src="/assets/video/Bogota.mp4" type='video/mp4' />
-        <source src="/assets/video/Bogota.webm" type='video/webm' />
-        <source src="/assets/video/Bogota.ogg" type='video/ogg' />
+        <source src="/static/video/Bogota.mp4" type='video/mp4' />
+        <source src="/static/video/Bogota.webm" type='video/webm' />
+        <source src="/static/video/Bogota.ogg" type='video/ogg' />
         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
     </video>
 

@@ -2,9 +2,9 @@
 
 <section class="banner main zenbanx">
 
-    <video autoplay loop muted poster="/assets/img/header/Zenbanx.png" id="bgvid">
-        <source src="/assets/video/Zenbanx.webmhd.webm" type="video/webm">
-        <source src="/assets/video/Zenbanx.mp4" type="video/mp4">
+    <video autoplay loop muted poster="/static/img/header/Zenbanx.png" id="bgvid">
+        <source src="/static/video/Zenbanx.webmhd.webm" type="video/webm">
+        <source src="/static/video/Zenbanx.mp4" type="video/mp4">
     </video>
 
 </section>
@@ -20,7 +20,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/currency-icon.png" />
+                        <img src="/static/img/home_icons/currency-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -32,7 +32,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/send-money-icon.png" />
+                        <img src="/static/img/home_icons/send-money-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -44,7 +44,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/secure-icon.png" />
+                        <img src="/static/img/home_icons/secure-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -56,7 +56,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/mobile-icon.png" />
+                        <img src="/static/img/home_icons/mobile-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -68,7 +68,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/social-icon.png" />
+                        <img src="/static/img/home_icons/social-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -80,7 +80,7 @@
             <div class="proposition">
                 <div class="image-wrapper">
                     <span class="image">
-                        <img src="/assets/img/home_icons/atm-icon.png" />
+                        <img src="/static/img/home_icons/atm-icon.png" />
                     </span>
                 </div>
                 <p class="caption">
@@ -112,7 +112,7 @@
 <div class="content-wrapper">
 
     <h2 class="title centered">See How ZenBanx Works</h2>
-    <!--<img class="video-placeholder" src="/assets/img/video-placeholder.png" alt="See How ZenBanx Works - Video" />-->
+    <!--<img class="video-placeholder" src="/static/img/video-placeholder.png" alt="See How ZenBanx Works - Video" />-->
     <iframe class="video-placeholder" src="https://player.vimeo.com/video/121408018?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 </div>
@@ -129,25 +129,25 @@
             <!-- mega phone shows all three animations -->
             <div id="mega-phone" class="hide-from-mobile phone-wrapper">
 
-                <img class="phone-background" src="/assets/img/phone-background.png" />
-                <img id="interstitial" class="animation" src="/assets/img/phone-interstitial.png" />
+                <img class="phone-background" src="/static/img/phone-background.png" />
+                <img id="interstitial" class="animation" src="/static/img/phone-interstitial.png" />
 
                 <!-- first animation -->
-                <img class="animation animation-1" src="/assets/animations/exchange-money.gif" />
-                <video class="animation animation-1 webm" autoplay loop muted poster="/assets/animations/exchange-money.gif">
-                    <source src="/assets/animations/exchange-money.webmhd.webm" type="video/webm">
+                <img class="animation animation-1" src="/static/animations/exchange-money.gif" />
+                <video class="animation animation-1 webm" autoplay loop muted poster="/static/animations/exchange-money.gif">
+                    <source src="/static/animations/exchange-money.webmhd.webm" type="video/webm">
                 </video>
 
                 <!-- second animation -->
-                <img class="animation animation-2" src="/assets/animations/send-money.gif" />
-                <video class="animation animation-2 webm" autoplay loop muted poster="/assets/animations/send-money.gif">
-                    <source src="/assets/animations/send-money.webmhd.webm" type="video/webm">
+                <img class="animation animation-2" src="/static/animations/send-money.gif" />
+                <video class="animation animation-2 webm" autoplay loop muted poster="/static/animations/send-money.gif">
+                    <source src="/static/animations/send-money.webmhd.webm" type="video/webm">
                 </video>
 
                 <!-- third animation -->
-                <img class="animation animation-3" src="/assets/animations/add-contact.gif" />
-                <video class="animation animation-3 webm" autoplay loop muted poster="/assets/animations/add-contact.gif">
-                    <source src="/assets/animations/add-contact.webmhd.webm" type="video/webm">
+                <img class="animation animation-3" src="/static/animations/add-contact.gif" />
+                <video class="animation animation-3 webm" autoplay loop muted poster="/static/animations/add-contact.gif">
+                    <source src="/static/animations/add-contact.webmhd.webm" type="video/webm">
                 </video>
 
                 <div class="clearfix"></div>
@@ -155,8 +155,8 @@
             <!-- mega phone -->
 
             <div id="first-phone" class="hide-from-desktop phone-wrapper">
-                <img class="phone-background" src="/assets/img/phone-background.png" />
-                <img class="animation" src="/assets/animations/exchange-money.gif" />
+                <img class="phone-background" src="/static/img/phone-background.png" />
+                <img class="animation" src="/static/animations/exchange-money.gif" />
                 <div class="clearfix"></div>
             </div>
 
@@ -170,15 +170,15 @@
                 no branch visits required and no hidden fees. Finally a bank account as global as you are.
             </p>
             <ul class="flags">
-                <li><img src="/assets/img/flags/america.png"/></li>
-                <li><img src="/assets/img/flags/canada.png"/></li>
-                <li><img src="/assets/img/flags/japan.png"/></li>
-                <li><img src="/assets/img/flags/india.png"/></li>
-                <li><img src="/assets/img/flags/malaysia.png"/></li>
-                <li><img src="/assets/img/flags/turkey.png"/></li>
-                <li><img src="/assets/img/flags/australia.png"/></li>
-                <li><img src="/assets/img/flags/eu.png"/></li>
-                <li><img src="/assets/img/flags/england.png"/></li>
+                <li><img src="/static/img/flags/america.png"/></li>
+                <li><img src="/static/img/flags/canada.png"/></li>
+                <li><img src="/static/img/flags/japan.png"/></li>
+                <li><img src="/static/img/flags/india.png"/></li>
+                <li><img src="/static/img/flags/malaysia.png"/></li>
+                <li><img src="/static/img/flags/turkey.png"/></li>
+                <li><img src="/static/img/flags/australia.png"/></li>
+                <li><img src="/static/img/flags/eu.png"/></li>
+                <li><img src="/static/img/flags/england.png"/></li>
             </ul>
         </div>
         </div>
@@ -194,7 +194,7 @@
                 It's just like your regular bank account, only better and global.
             </p> 
             <div class="credit-card">
-                <img src="/assets/img/credit-card.png" />
+                <img src="/static/img/credit-card.png" />
             </div>
         </div>
         </div>
@@ -204,8 +204,8 @@
 
         <div class="col-xs-12 col-sm-4 col-sm-push-4">
             <div id="second-phone" class="hide-from-desktop phone-wrapper">
-                <img class="phone-background" src="/assets/img/phone-background.png" />
-                <img class="animation" src="/assets/animations/send-money.gif" />
+                <img class="phone-background" src="/static/img/phone-background.png" />
+                <img class="animation" src="/static/animations/send-money.gif" />
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -258,8 +258,8 @@
 
         <div class="col-xs-12 col-sm-4 col-sm-push-4">
             <div id="third-phone" class="hide-from-desktop phone-wrapper">
-                <img class="phone-background" src="/assets/img/phone-background.png" />
-                <img class="animation" src="/assets/animations/add-contact.gif" />
+                <img class="phone-background" src="/static/img/phone-background.png" />
+                <img class="animation" src="/static/animations/add-contact.gif" />
                 <div class="clearfix"></div>
             </div>
         </div>
