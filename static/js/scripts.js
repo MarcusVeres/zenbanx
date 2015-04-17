@@ -52,7 +52,7 @@
     // for compressing header
 
     doc_scope.is_ribbon_compressed = function(){
-        console.log("checking ribbon");
+        // console.log("checking ribbon");
         return doc_scope.ribbon_compressed;
     };
 
@@ -217,8 +217,6 @@
 
     $(document).ready(function(){
 
-        console.log("we has query");
-
         // try wow js
         new WOW().init();
 
@@ -231,7 +229,7 @@
         // reset the mega phone top margin, if it exists
         var mega_phone = document.getElementById("mega-phone");
         if( mega_phone ){
-            console.log("RESETTING");
+            //console.log("RESETTING");
             mega_phone.style.marginTop = "1px";
         }
 
