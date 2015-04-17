@@ -326,6 +326,7 @@ h3.call-to-action
     top: 0
     width: 100%
     z-index: 98
+    @include grayscale-shadow( 12 , 0.3 )
 
     // fixes a chrome stuttering bug
     -webkit-transform: translateZ(0) 
@@ -361,6 +362,7 @@ h3.call-to-action
     .context-menu
         margin-top: 4px
 
+
 @media screen and ( max-width: 768px )
 
     .ribbon svg
@@ -369,7 +371,7 @@ h3.call-to-action
 
     .main-menu-header
         @include grayscale-shadow( 12 , 0.3 )
-        background: $purple
+        background: $white
         height: 80px
 
         .menu-wrapper
@@ -382,6 +384,7 @@ h3.call-to-action
             max-width: 55px
             margin-left: 1.2rem
 
+
 @media screen and ( max-width: 360px )
 
     .main-menu-header
@@ -391,6 +394,7 @@ h3.call-to-action
 
     .menu-group
         margin-right: 0.8rem
+
 
 //
 
@@ -444,7 +448,7 @@ h3.call-to-action
 
 .main-menu-header.solid
     @include grayscale-shadow( 12 , 0.3 )
-    background: $purple
+    background: $white
     height: 80px
 
     .menu-wrapper
@@ -454,7 +458,7 @@ h3.call-to-action
 
     .ribbon svg
         height: 80px
-        fill: $purple
+        fill: $white
 
 .main-menu-underlay.solid
     padding-top: 50px 
