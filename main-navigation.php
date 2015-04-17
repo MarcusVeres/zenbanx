@@ -3,7 +3,15 @@
                 but we need to figure out how the sides will be rectangular over a certain width -->
     <div class="ribbon">
         <svg viewBox="0 0 100 10" preserveAspectRatio="none" style="background:none" fill="none">
-            <polygon points="0,0 32,5 100,1.1 100,9.2 74,5.6 32,6.4 0,10" style="margin-top: 20px;"></polygon>
+
+            <!--<polygon points="0,0 32,5 100,1.1 100,9.2 74,5.6 32,6.4 0,10" style="margin-top: 20px;"></polygon>-->
+
+            <polygon points="26,1 26,2 52,4.4 54,2.4" style="fill: #6d3794;"></polygon>
+            <polygon points=" 54,2.4 54,4.8 50,6.3 50,5.7" style=" fill: #642b8f;"></polygon>
+            <polygon points="32,4 26,1 26,2 29,5" style=" fill: #642b8f;"></polygon>
+            <polygon points="0,6 32,4 32,5.5 0,10" style="fill: #6d3794;"></polygon>
+            <polygon points="100,4 100,8.5 50,6.8 50,5.8" style="fill: #6d3794;"></polygon>
+
         </svg>
     </div>
 </section>
