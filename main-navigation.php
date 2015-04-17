@@ -5,6 +5,7 @@
         <svg viewBox="0 0 100 10" preserveAspectRatio="none" style="background:none" fill="none">
 
             <!--<polygon points="0,0 32,5 100,1.1 100,9.2 74,5.6 32,6.4 0,10" style="margin-top: 20px;"></polygon>-->
+            <polygon points="0,0 0,9 32,5 26,2 54,2.4 50,6 100,8 100,0" style="fill: #f9f9f9;"></polygon>
 
             <polygon points="26,1 26,2 52,4.4 54,2.4" style="fill: #6d3794;"></polygon>
             <polygon points=" 54,2.4 54,4.8 50,6.3 50,5.7" style=" fill: #642b8f;"></polygon>
