@@ -407,15 +407,14 @@ h3.call-to-action
 .main-menu-underlay,
 .sign-up-underlay
     @include grayscale-shadow( 12 , 0.3 )
-    padding-top: 80px
     position: fixed
-    top: 40px
+    top: 100px
+    padding-top: 12px
     left: 50%
     width: 180px
     margin-left: 500px
     color: $white
-    background: $purple
-    background: $lighter_purple
+    background: $darker_purple
     z-index: 90
     display: none
 
@@ -430,7 +429,15 @@ h3.call-to-action
 
     @media screen and ( max-width: 768px )
 
+        top: 40px
         padding-top: 32px
+        background: $purple
+
+
+    &.solid
+        top: 40px
+        padding-top: 50px 
+        background: $purple
 
 
 .close-menu
@@ -459,10 +466,6 @@ h3.call-to-action
     .ribbon svg
         height: 80px
         fill: $white
-
-
-.main-menu-underlay.solid
-    padding-top: 50px 
 
 
 // sections
