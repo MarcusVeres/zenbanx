@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.1/animate.min.css">
-    <link rel="stylesheet" href="assets/styles.min.css"/>
+    <link rel="stylesheet" href="/static/css/styles.min.css"/>
 
     <!-- libs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -27,7 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.0.3/wow.min.js"></script>
 
     <!-- scripts -->
-    <script src="static/js/scripts.js"></script>
+    <script src="/static/js/scripts.js"></script>
 
 </head>
 <body>

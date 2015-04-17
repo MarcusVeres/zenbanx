@@ -313,7 +313,7 @@
             // this is going to pull all frequently asked questions
             $http({
                 method: 'GET',
-                url: '/assets/data/faqs.json'
+                url: '/static/data/faqs.json'
             })
             .success( function( data )
             {
@@ -341,7 +341,7 @@
             // this is going to pull all frequently asked questions
             $http({
                 method: 'GET',
-                url: '/assets/data/news.json'
+                url: '/static/data/news.json'
             })
             .success( function( data )
             {
