@@ -22,6 +22,13 @@
         <div class="pull-right context-menu">
             <ul class="menu-group">
                 <li>
+                    <div class="menu-button menu-button-country">
+                        <a href="/" class="selected">CAN</a>
+                        <div class="menu-divider">|</div>
+                        <a href="http://zenbanx.com">US</a>
+                    </div>
+                </li>
+                <li>
                     <div class="menu-button">
                         <a href="http://zbc.zenbanx.ca">Sign In</a>
                     </div>
@@ -29,17 +36,6 @@
                 <li>
                     <div class="menu-icon open-menu" id="toggle-menu">
                         <i class="fa fa-bars"></i>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="pull-right context-menu">
-            <ul class="menu-group">
-                <li>
-                    <div class="menu-button-country">
-                        
-                    CAN <span class="light">| <a href="http://zenbanx.com">US</a></span>
-                        
                     </div>
                 </li>
             </ul>
