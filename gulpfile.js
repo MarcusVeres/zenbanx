@@ -49,7 +49,7 @@ gulp.task('sass', function() {
 gulp.task('ruby_sass', function(){
     return sass( paths.sass , { style: 'compressed'})
         .pipe(rename('styles.min.css'))
-        .pipe(gulp.dest('assets/'));
+        .pipe(gulp.dest('static/css/'));
 });
 
 gulp.task('scripts', function() {
