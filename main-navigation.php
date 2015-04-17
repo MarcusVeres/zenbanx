@@ -15,7 +15,7 @@
     <div class="menu-wrapper">
         <a href="/" class="logo-wrapper">
             <h1 class="wordmark">
-                <img src="/static/img/wordmark.png" alt="ZenBanx :: Around the corner, around the world." />
+                <img src="/static/img/logo.svg" alt="ZenBanx :: Around the corner, around the world." />
             </h1>
         </a>
         
