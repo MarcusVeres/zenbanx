@@ -19,26 +19,9 @@
       poster="/static/img/header/Zenbanx.png"
       data-setup='{ "example_option":true , "autoplay":true, "loop":true, "width":"100%", "height":"auto" }'>
 
-        <!-- sample -->
-        <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
-        <source src="http://techslides.com/demos/sample-videos/small.webm" type="video/webm" />
-        <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg" />
-
-        <!--
         <source src="/static/video/Zenbanx.mp4" type='video/mp4' />
         <source src="/static/video/Zenbanx.webmhd.webm" type='video/webm' />
         <source src="/static/video/Zenbanx.oggtheora.ogv" type='video/ogg' />
-        -->
-
-        <!-- Flash Fallback. Use any flash video player here. Make sure to keep the vjs-flash-fallback class. -->
-        <!--
-        <object class="vjs-flash-fallback" width="640" height="360" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
-            <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
-            <param name="allowfullscreen" value="true" />
-            <param name="flashvars" value='config={"playlist":["path/to/image.png", {"url": "path/to/video.flv","autoPlay":false,"autoBuffering":true}]}' />
-            <img src="path/to/image.png" width="640" height="264" alt="Poster Image" title="No video playback capabilities." />
-        </object>
-        -->
 
         <p class="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a web browser that 
