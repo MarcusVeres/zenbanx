@@ -29,6 +29,59 @@
     <!-- scripts -->
     <script src="/static/js/scripts.js"></script>
 
+
+    <!-- -------------------- -->
+
+    <script type="text/javascript">
+        document.createElement('video');
+        document.createElement('audio');
+        document.createElement('track');
+    </script>
+
+    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/4.12/video.js"></script>
+
+
+    <style>
+
+        .video-js {
+            position: static;
+        }
+
+        .video-js .vjs-tech {
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            bottom: 0 !important;
+            top: auto !important;
+        }
+
+        section.banner.main {
+            height: auto;
+            min-height: 330px;
+            position: relative;
+        }
+
+        @media screen and (min-width: 1080px ){
+            section.banner.main {
+                height: 440px;
+            }
+        }
+
+        @media screen and (max-width: 768px ){
+            #bgvid {
+                display: none;
+            }
+        }
+
+        .banner.main {
+            background: teal;
+        }
+
+    </style>
+
+
 </head>
 <body>
 
