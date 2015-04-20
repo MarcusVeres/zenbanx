@@ -30,8 +30,6 @@
     <script src="/static/js/scripts.js"></script>
 
 
-    <!-- -------------------- -->
-
     <script type="text/javascript">
         document.createElement('video');
         document.createElement('audio');
