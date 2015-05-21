@@ -670,9 +670,19 @@ section.lightbox
 .phone-wrapper
     display: block
     margin: 1rem auto
-    position: relative
     width: 100%
     max-width: 255px
+    position: absolute
+    margin-left: 100px
+
+    &.fixed
+        position: fixed
+        margin-top: 100px
+        top: 100px
+
+    &.static
+        position: absolute
+        margin-top: 5454px !important
 
     .animation
         position: absolute
@@ -704,12 +714,12 @@ section.lightbox
     
         // to get the parallax effect working, this needs to be absolute
         // otherwise the margin will push down all rows below it
-        position: absolute
-        margin-left: 10px
+        // position: absolute
+        // margin-left: 10px
 
     @media screen and (min-width : 992px )
 
-        margin-left: 100px
+        // margin-left: 100px
 
 
 .video-placeholder

@@ -27,6 +27,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.0.3/wow.min.js"></script>
 
     <!-- scripts -->
+    <script src="/static/js/tools.js"></script>
     <script src="/static/js/scripts.js"></script>
 
 

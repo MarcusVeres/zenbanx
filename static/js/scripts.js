@@ -134,7 +134,7 @@
         if( !document.getElementById("mega-phone") ){
             return;
         }
-
+        
         var margin = coordinates.get('margin_from_top');
 
         var buffer = coordinates.get('buffer');
@@ -149,9 +149,34 @@
         // compensate for header n' shit
         screen_top += coordinates.get('margin_from_top');
 
+
+        if( screen_top > top_limit && screen_top < bottom_limit )
+        {
+            // the phone is fixed to the top of the screen and there is no top margin
+            $('#mega-phone').addClass('fixed');
+            $('#mega-phone').removeClass('static');
+            // document.getElementById("mega-phone").style.marginTop = "0px";
+        } 
+        else if ( screen_top > top_limit && screen_top >= bottom_limit )
+        {
+            // the phone has moved past the max limit. it needs to stap static at the bottom of the page
+            $('#mega-phone').removeClass('fixed');
+            $('#mega-phone').addClass('static');
+            // document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
+        } 
+        else 
+        {
+            // we are at the top of the screen :: nothing is happening
+            $('#mega-phone').removeClass('fixed');
+            $('#mega-phone').removeClass('static');
+            // document.getElementById("mega-phone").style.marginTop = "0px";
+        }
+
+        /*
         if( screen_top > top_limit && screen_top < bottom_limit ){
             document.getElementById("mega-phone").style.marginTop = ( screen_top - coordinates.get_init_phone_pos() ) + "px";
         }
+        */
 
         // animation shifts
         if( screen_top < t2.y - buffer )
@@ -209,7 +234,7 @@
         else {
             fade.style.opacity = 0; 
         }
-        
+
     }
 
 
@@ -276,8 +301,12 @@
             'height': end.offsetHeight
         });
 
+
+        // megaphone
+        var megaphone = document.getElementById('mega-phone');
+
         // get the original position of the mega phone
-        coordinates.set( "init_phone_pos" , document.getElementById('mega-phone').getBoundingClientRect().top );
+        coordinates.set( "init_phone_pos" , megaphone.getBoundingClientRect().top );
 
     });
 
